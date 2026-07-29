@@ -1,1 +1,760 @@
-{"name":"index.html","type":"code/html","content":"<!DOCTYPE html>\n<html lang="en">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>Seemantha Invitation | Divya & Sunil</title>\n<link href="[https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;600&display=swap\](https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Poppins:wght@300;400;600&display=swap\)" rel="stylesheet">\n<style>\n*{margin:0;padding:0;box-sizing:border-box}\nbody{font-family:Poppins,sans-serif;background:#fffaf5;color:#4b2d20;line-height:1.6}\nheader{height:100vh;background:linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),url('[https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80](https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1600&q=80)') center/cover;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}\n.hero{background:rgba(255,255,255,.12);backdrop-filter:blur(6px);padding:40px;border-radius:20px;max-width:700px}\nh1{font-family:Cinzel,serif;font-size:3rem;margin-bottom:10px}\nh2{font-weight:300;margin-bottom:20px}\n.btn{display:inline-block;margin:10px;padding:14px 30px;border-radius:30px;text-decoration:none;font-weight:600;background:#b8860b;color:white;transition:.3s}\n.btn:hover\nsection{max-width:1000px;margin:auto;padding:70px 20px}\n.card{background:white;border-radius:20px;padding:35px;box-shadow:0 8px 30px rgba(0,0,0,.08);margin-top:25px}\nh3{font-family:Cinzel,serif;font-size:2rem;margin-bottom:20px;color:#8c6500}\n.details{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}\n.detail{padding:20px;background:#fff7ea;border-radius:15px;text-align:center}\n.countdown{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:25px}\n.box{background:#b8860b;color:white;padding:18px;border-radius:12px;width:90px;text-align:center}\n.box span{font-size:2rem;font-weight:bold;display:block}\n.lang{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}\n.lang button{padding:10px 16px;border:none;border-radius:20px;background:#eee;cursor:pointer}\n.lang button:hover\n.msg{display:none;font-size:1.1rem;text-align:center;max-width:700px;margin:auto}\n.msg.active{display:block}\nfooter{text-align:center;background:#8c6500;color:white;padding:35px;margin-top:60px}\n.small{font-size:.9rem;color:#777}\n</style>\n</head>\n<body>\n<header>\n<div class='hero'>\n<h1>Seemantha Ceremony</h1>\n<h2>Divya & Sunil</h2>\n<p>Sunday • 30 August 2026 • 11:00 AM</p>\n<p>Dortmund, Germany<br><em>Venue to be announced soon</em></p><br>\n<a class='btn' href='https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing' target='_blank'>RSVP Now</a>\n<a class='btn' href='#details'>Event Details</a>\n</div>\n</header>\n<section>\n<h3 style='text-align:center'>Countdown</h3>\n<div class='countdown'>\n<div class='box'><span id='days'>0</span>Days</div>\n<div class='box'><span id='hours'>0</span>Hours</div>\n<div class='box'><span id='minutes'>0</span>Minutes</div>\n<div class='box'><span id='seconds'>0</span>Seconds</div>\n</div>\n</section>\n<section id='details'>\n<h3>Event Details</h3>\n<div class='card'>\n<div class='details'>\n<div class='detail'><strong>Date</strong><br>30 August 2026</div>\n<div class='detail'><strong>Time</strong><br>11:00 AM</div>\n<div class='detail'><strong>Location</strong><br>Dortmund, Germany<br><small>Venue coming soon</small></div>\n<div class='detail'><strong>RSVP By</strong><br>1 August 2026</div>\n</div>\n</div>\n</section>\n<section>\n<h3 style='text-align:center'>Welcome</h3>\n<div class='lang'>\n<button onclick="show('en')">English</button>\n<button onclick="show('kn')">ಕನ್ನಡ</button>\n<button onclick="show('te')">తెలుగు</button>\n<button onclick="show('hi')">हिन्दी</button>\n<button onclick="show('de')">Deutsch</button>\n</div>\n<div id='en' class='msg active'>With immense joy, Divya & Sunil warmly invite you to celebrate the sacred Seemantha ceremony. Your blessings and presence will make this day truly memorable.</div>\n<div id='kn' class='msg'>ನಮ್ಮ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನಿಮ್ಮನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ನಿಮ್ಮ ಆಶೀರ್ವಾದ ಮತ್ತು ಉಪಸ್ಥಿತಿ ನಮ್ಮ ಕುಟುಂಬಕ್ಕೆ ಅಮೂಲ್ಯ.</div>\n<div id='te' class='msg'>మా సీమంత వేడుకకు మీ అందరినీ హృదయపూర్వకంగా ఆహ్వానిస్తున్నాము. మీ ఆశీస్సులు మాకు అమూల్యమైనవి.</div>\n<div id='hi' class='msg'>हम आपको हमारे सीमंत समारोह में सादर आमंत्रित करते हैं। आपका आशीर्वाद हमारे लिए अमूल्य है।</div>\n<div id='de' class='msg'>Wir laden Sie herzlich zu unserer Seemantha-Zeremonie ein. Ihre Anwesenheit und Segenswünsche bedeuten uns sehr viel.</div>\n</section>\n<section>\n<h3>Schedule</h3>\n<div class='card'>\n<p><strong>11:00 AM</strong> – Guests Arrive</p><br>\n<p><strong>11:30 AM</strong> – Seemantha Ceremony</p><br>\n<p><strong>1:00 PM</strong> – Lunch & Fellowship</p>\n</div>\n</section>\n<section>\n<h3>RSVP</h3>\n<div class='card' style='text-align:center'>\n<p>We would be delighted to celebrate this special occasion with you.</p><br>\n<p><strong>Please RSVP by 1 August 2026.</strong></p><br>\n<a class='btn' href='https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing' target='_blank'>Complete RSVP</a>\n</div>\n</section>\n<footer>\n<h2>We look forward to celebrating with you!</h2>\n<p>With love,<br>Divya & Sunil</p><br>\n<p class='small'>Venue address will be updated soon.</p>\n</footer>\n<script>\nfunction show(id){document.querySelectorAll('.msg').forEach(e=>e.classList.remove('active'));document.getElementById(id).classList.add('active');}\nconst target=new Date('August 30, 2026 11:00:00').getTime();\nsetInterval(()=>{const now=new Date().getTime();const d=target-now;document.getElementById('days').innerHTML=Math.floor(d/(1000*60*60*24));document.getElementById('hours').innerHTML=Math.floor((d%(1000*60*60*24))/(1000*60*60));document.getElementById('minutes').innerHTML=Math.floor((d%(1000*60*60))/(1000*60));document.getElementById('seconds').innerHTML=Math.floor((d%(1000*60))/1000);},1000);\n</script>\n</body>\n</html>"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Seemantham Invitation | Divya & Sunil</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&family=Noto+Sans+Kannada&family=Noto+Sans+Telugu&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fffdf5;
+    color:#3b2a15;
+    overflow-x:hidden;
+}
+
+.gold{
+    color:#c89b3c;
+}
+
+header{
+    min-height:100vh;
+    background:
+    linear-gradient(
+    rgba(0,60,30,.55),
+    rgba(0,60,30,.55)
+    ),
+    url("https://images.unsplash.com/photo-1606800052052-a08af7148866")
+    center/cover;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:25px;
+}
+
+.invitation-card{
+
+    background:rgba(255,255,255,.92);
+    max-width:750px;
+    padding:45px 30px;
+    border-radius:25px;
+
+    border:8px double #c89b3c;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+    animation:fade 2s;
+
+}
+
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+
+h1{
+font-family:'Cinzel',serif;
+font-size:3rem;
+color:#176b3a;
+}
+
+
+.subtitle{
+font-size:1.3rem;
+margin:15px;
+}
+
+
+.names{
+
+font-family:'Cinzel',serif;
+font-size:2.5rem;
+color:#b8860b;
+margin:20px;
+
+}
+
+
+.flower{
+font-size:40px;
+}
+
+
+.btn{
+
+display:inline-block;
+padding:14px 30px;
+margin:10px;
+
+background:#176b3a;
+color:white;
+
+border-radius:30px;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+
+.btn:hover{
+
+background:#c89b3c;
+transform:scale(1.05);
+
+}
+
+
+
+section{
+
+padding:70px 20px;
+max-width:1100px;
+margin:auto;
+
+}
+
+
+.title{
+
+text-align:center;
+
+font-family:'Cinzel',serif;
+
+font-size:2.2rem;
+
+color:#176b3a;
+
+margin-bottom:35px;
+
+}
+
+
+
+.card{
+
+background:white;
+
+border-radius:20px;
+
+padding:35px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+border-top:5px solid #c89b3c;
+
+}
+
+
+
+.details{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+
+.detail-box{
+
+background:#f5f2df;
+
+padding:25px;
+
+border-radius:15px;
+
+text-align:center;
+
+}
+
+
+.detail-box span{
+
+font-size:30px;
+
+display:block;
+
+margin-bottom:10px;
+
+}
+
+
+
+.decor{
+
+text-align:center;
+
+font-size:35px;
+
+color:#c89b3c;
+
+}
+
+
+.countdown{
+
+display:flex;
+
+justify-content:center;
+
+gap:15px;
+
+flex-wrap:wrap;
+
+}
+
+
+.time-box{
+
+background:#176b3a;
+
+color:white;
+
+padding:20px;
+
+border-radius:15px;
+
+min-width:90px;
+
+}
+
+
+.time-box strong{
+
+font-size:30px;
+
+display:block;
+
+}
+
+
+
+.languages{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+
+.languages button{
+
+border:none;
+
+padding:10px 15px;
+
+margin:5px;
+
+border-radius:20px;
+
+background:#eee;
+
+cursor:pointer;
+
+}
+
+
+.languages button:hover{
+
+background:#176b3a;
+
+color:white;
+
+}
+
+
+.message{
+
+display:none;
+
+text-align:center;
+
+font-size:1.1rem;
+
+}
+
+
+.message.active{
+
+display:block;
+
+}
+
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="invitation-card">
+
+<div class="flower">🌿🌼🌿</div>
+
+<h1>Seemantham Ceremony</h1>
+
+
+<div class="names">
+Divya & Sunil
+</div>
+
+
+<p class="subtitle">
+With the blessings of our families,<br>
+we joyfully invite you to celebrate this special occasion.
+</p>
+
+
+<p>
+📅 Sunday, 30 August 2026<br>
+🕚 11:00 AM<br>
+📍 Dortmund, Germany
+</p>
+
+
+<a class="btn"
+href="https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing"
+target="_blank">
+RSVP
+</a>
+
+
+</div>
+
+</header><section>
+
+<div class="decor">
+🌼 🌿 🌼
+</div>
+
+<h2 class="title">
+Event Details
+</h2>
+
+
+<div class="card">
+
+<div class="details">
+
+
+<div class="detail-box">
+<span>📅</span>
+<strong>Date</strong>
+<br>
+30 August 2026
+</div>
+
+
+<div class="detail-box">
+<span>🕚</span>
+<strong>Time</strong>
+<br>
+11:00 AM
+</div>
+
+
+<div class="detail-box">
+<span>📍</span>
+<strong>Location</strong>
+<br>
+Dortmund, Germany
+<br>
+<small>Venue details coming soon</small>
+</div>
+
+
+<div class="detail-box">
+<span>💌</span>
+<strong>RSVP Deadline</strong>
+<br>
+1 August 2026
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2 class="title">
+Countdown
+</h2>
+
+
+<div class="countdown">
+
+
+<div class="time-box">
+<strong id="days">0</strong>
+Days
+</div>
+
+
+<div class="time-box">
+<strong id="hours">0</strong>
+Hours
+</div>
+
+
+<div class="time-box">
+<strong id="minutes">0</strong>
+Minutes
+</div>
+
+
+<div class="time-box">
+<strong id="seconds">0</strong>
+Seconds
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+<section>
+
+
+<h2 class="title">
+Invitation Message
+</h2>
+
+
+<div class="languages">
+
+<button onclick="changeLanguage('english')">
+English
+</button>
+
+<button onclick="changeLanguage('kannada')">
+ಕನ್ನಡ
+</button>
+
+<button onclick="changeLanguage('telugu')">
+తెలుగు
+</button>
+
+<button onclick="changeLanguage('hindi')">
+हिन्दी
+</button>
+
+<button onclick="changeLanguage('german')">
+Deutsch
+</button>
+
+
+</div>
+
+
+
+<div class="card">
+
+
+<p id="english" class="message active">
+
+With immense happiness, Divya and Sunil invite you and your family to join us for the Seemantham ceremony.
+
+Your presence, blessings and good wishes will make this celebration truly special.
+
+</p>
+
+
+
+<p id="kannada" class="message">
+
+ನಮ್ಮ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನಿಮ್ಮನ್ನು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ.
+
+ನಿಮ್ಮ ಉಪಸ್ಥಿತಿ ಮತ್ತು ಆಶೀರ್ವಾದಗಳು ನಮಗೆ ಅಮೂಲ್ಯ.
+
+</p>
+
+
+
+<p id="telugu" class="message">
+
+మా సీమంత వేడుకకు మిమ్మల్ని మరియు మీ కుటుంబ సభ్యులను హృదయపూర్వకంగా ఆహ్వానిస్తున్నాము.
+
+మీ ఆశీస్సులు మా కుటుంబానికి ఎంతో విలువైనవి.
+
+</p>
+
+
+
+<p id="hindi" class="message">
+
+हम आपको और आपके परिवार को हमारे सीमंत समारोह में सादर आमंत्रित करते हैं।
+
+आपकी उपस्थिति और आशीर्वाद हमारे लिए बहुत महत्वपूर्ण हैं।
+
+</p>
+
+
+
+<p id="german" class="message">
+
+Wir laden Sie und Ihre Familie herzlich zu unserer Seemantha-Zeremonie ein.
+
+Ihre Anwesenheit und Segenswünsche bedeuten uns sehr viel.
+
+</p>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2 class="title">
+Schedule
+</h2>
+
+
+<div class="card">
+
+
+<p>
+🌿 <strong>11:00 AM</strong><br>
+Guests arrive
+</p>
+
+
+<br>
+
+
+<p>
+🪔 <strong>11:30 AM</strong><br>
+Seemantham Ceremony
+</p>
+
+
+<br>
+
+
+<p>
+🍽️ <strong>1:00 PM</strong><br>
+Lunch & Family Gathering
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section>
+
+
+<h2 class="title">
+RSVP
+</h2>
+
+
+<div class="card" style="text-align:center">
+
+
+<p>
+We would be honoured to celebrate this beautiful occasion with you.
+</p>
+
+
+<br>
+
+
+<p>
+<strong>
+Please confirm your attendance by 1 August 2026
+</strong>
+</p>
+
+
+<br>
+
+
+<a class="btn"
+href="https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing"
+target="_blank">
+
+Open RSVP Form
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<footer style="
+background:#176b3a;
+color:white;
+text-align:center;
+padding:40px;
+">
+
+
+<h2>
+🌿 With love & blessings 🌿
+</h2>
+
+
+<p>
+Divya & Sunil
+</p>
+
+
+<p>
+Venue address will be updated soon.
+</p>
+
+
+</footer>
+
+
+
+
+
+<script>
+
+
+function changeLanguage(language){
+
+let messages=document.querySelectorAll(".message");
+
+messages.forEach(function(msg){
+
+msg.classList.remove("active");
+
+});
+
+
+document.getElementById(language)
+.classList.add("active");
+
+
+}
+
+
+
+
+
+let eventDate =
+new Date("August 30, 2026 11:00:00").getTime();
+
+
+
+setInterval(function(){
+
+
+let now =
+new Date().getTime();
+
+
+
+let distance =
+eventDate-now;
+
+
+
+let days =
+Math.floor(distance/(1000*60*60*24));
+
+
+let hours =
+Math.floor(
+(distance%(1000*60*60*24))
+/(1000*60*60)
+);
+
+
+
+let minutes =
+Math.floor(
+(distance%(1000*60*60))
+/(1000*60)
+);
+
+
+
+let seconds =
+Math.floor(
+(distance%(1000*60))
+/1000
+);
+
+
+
+document.getElementById("days").innerHTML=days;
+
+document.getElementById("hours").innerHTML=hours;
+
+document.getElementById("minutes").innerHTML=minutes;
+
+document.getElementById("seconds").innerHTML=seconds;
+
+
+
+},1000);
+
+
+</script>
+
+
+</body>
+</html>
