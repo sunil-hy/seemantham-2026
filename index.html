@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seemantham & Baby Shower Invitation | Divya & Sunil</title>
+  <title>Seemantham | Divya & Sunil</title>
 
-  <!-- Retained previous Google Fonts -->
+  <!-- Google Fonts: keep Cinzel for headings and Poppins for body, Kannada/Telugu support -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&family=Noto+Sans+Kannada&family=Noto+Sans+Telugu&display=swap" rel="stylesheet">
 
   <style>
@@ -13,110 +13,156 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{
       font-family:'Poppins',sans-serif;
-      background:#fffdf5;
+      background:#fffaf0; /* warm cream */
       color:#3b2a15;
       overflow-x:hidden;
     }
 
-    .gold{color:#c89b3c}
+    /* Garland decorations (left & right) */
+    .garland{position:fixed;top:0;bottom:0;width:72px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:28px;z-index:5}
+    .garland span{width:42px;height:42px;border-radius:999px;background:#ffd24d;margin:6px 0;box-shadow:inset 0 -6px 8px rgba(0,0,0,0.06)}
+    .garland.left{left:6px}
+    .garland.right{right:6px}
 
-    /* Header: kept the previous background image + overlay */
+    /* Header: use hero photo supplied by user (place at assets/photo.jpg) with overlay */
     header{
       min-height:100vh;
       background:
-        linear-gradient(rgba(0,60,30,.55), rgba(0,60,30,.55)),
-        url("https://images.unsplash.com/photo-1606800052052-a08af7148866") center/cover;
+        linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
+        url('assets/photo.jpg') center/cover no-repeat;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
       padding:25px;
+      position:relative;
+    }
+
+    /* fallback background if photo not present */
+    header[data-fallback] {
+      background:
+        linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
+        url("https://images.unsplash.com/photo-1606800052052-a08af7148866") center/cover no-repeat;
     }
 
     .invitation-card{
-      background:rgba(255,255,255,.92);
-      max-width:820px;
-      padding:45px 30px;
-      border-radius:25px;
-      border:8px double #c89b3c;
-      box-shadow:0 20px 50px rgba(0,0,0,.25);
+      background:linear-gradient(180deg,#fffdf8, #fff7ec);
+      max-width:880px;
+      padding:40px 34px;
+      border-radius:26px;
+      border:10px double #b86b17; /* brass-like border */
+      box-shadow:0 25px 60px rgba(0,0,0,.26);
       animation:fade 1.2s ease;
       position:relative;
       overflow:visible;
+      text-align:center;
     }
 
     @keyframes fade{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-    h1{font-family:'Cinzel',serif;font-size:2.6rem;color:#176b3a}
-    .names{font-family:'Cinzel',serif;font-size:2rem;color:#b8860b;margin:12px}
-    .subtitle{font-size:1.05rem;margin:10px;color:rgba(0,0,0,.7)}
+    h1{font-family:'Cinzel',serif;font-size:3rem;color:#7b2e08;letter-spacing:1px}
+    .names{font-family:'Cinzel',serif;font-size:1.35rem;color:#a64b00;margin:8px}
+    .subtitle{font-size:1.02rem;margin:10px;color:rgba(0,0,0,.65)}
 
-    .btn{display:inline-block;padding:12px 28px;margin:10px;background:#176b3a;color:white;border-radius:30px;text-decoration:none;font-weight:600;transition:.25s}
-    .btn:hover{background:#c89b3c;transform:scale(1.03)}
+    .btn{display:inline-block;padding:12px 28px;margin:10px;background:#a22b1f;color:white;border-radius:30px;text-decoration:none;font-weight:600;transition:.25s}
+    .btn:hover{background:#ffb84d;transform:scale(1.03);color:#3b2a15}
 
     section{padding:70px 20px;max-width:1100px;margin:40px auto}
-    .title{text-align:center;font-family:'Cinzel',serif;font-size:2.2rem;color:#176b3a;margin-bottom:25px}
+    .title{text-align:center;font-family:'Cinzel',serif;font-size:2.2rem;color:#7b2e08;margin-bottom:25px}
 
-    .card{background:white;border-radius:20px;padding:35px;box-shadow:0 10px 30px rgba(0,0,0,.08);border-top:5px solid #c89b3c}
+    .card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.06);border-top:6px solid #a64b00}
 
     .details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-    .detail-box{background:#f5f2df;padding:25px;border-radius:15px;text-align:center}
+    .detail-box{background:#fff3e0;padding:22px;border-radius:14px;text-align:center}
     .detail-box span{font-size:30px;display:block;margin-bottom:10px}
 
-    .decor{text-align:center;font-size:35px;color:#c89b3c}
+    .decor{text-align:center;font-size:35px;color:#b86b17}
     .countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
 
-    .time-box{background:#176b3a;color:white;padding:20px;border-radius:15px;min-width:90px;text-align:center}
-    .time-box strong{font-size:30px;display:block}
+    .time-box{background:#7b2e08;color:white;padding:18px;border-radius:12px;min-width:90px;text-align:center}
+    .time-box strong{font-size:26px;display:block}
 
     .languages{text-align:center;margin-bottom:30px}
     .languages button{border:none;padding:10px 15px;margin:5px;border-radius:20px;background:#eee;cursor:pointer}
-    .languages button:hover{background:#176b3a;color:white}
+    .languages button:hover{background:#7b2e08;color:white}
 
-    .message{display:none;text-align:center;font-size:1.1rem;line-height:1.6}
+    .message{display:none;text-align:center;font-size:1.05rem;line-height:1.6}
     .message.active{display:block}
 
-    /* simple fade-in for sections */
+    /* fade-in for sections */
     .fade{opacity:0;transform:translateY(20px);transition:1s}
     .fade.show{opacity:1;transform:none}
 
-    footer{background:#176b3a;color:white;text-align:center;padding:40px}
+    footer{background:#7b2e08;color:white;text-align:center;padding:40px}
 
     /* Baby / parents animations */
     .to-be-parents{display:flex;align-items:center;gap:18px;justify-content:center;margin-top:8px}
     .parents-badge{background:linear-gradient(135deg,#fffaf0,#fff3e6);padding:8px 14px;border-radius:999px;border:2px solid #f1d7a3;display:flex;gap:10px;align-items:center}
 
-    .baby{font-size:48px;display:inline-block;transform-origin:center;animation:float 3s ease-in-out infinite}
-    .heart{color:#ff6b88;font-size:22px;display:inline-block;animation:pulse 1.6s infinite}
+    .baby{font-size:46px;display:inline-block;transform-origin:center;animation:float 3s ease-in-out infinite}
+    .heart{color:#ff6b88;font-size:20px;display:inline-block;animation:pulse 1.6s infinite}
 
     @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.18)}100%{transform:scale(1)}}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.12)}100%{transform:scale(1)}}
 
     /* small card decoration */
-    .small-note{font-size:0.95rem;color:rgba(0,0,0,.7);margin-top:8px}
+    .small-note{font-size:0.95rem;color:rgba(0,0,0,.67);margin-top:8px}
 
-    @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}}
+    /* newborn entrance animations - multiple baby icons float in */
+    .newborns{position:absolute;left:0;right:0;top:-10px;pointer-events:none;overflow:visible}
+    .newborn{position:absolute;font-size:34px;opacity:0;transform:translateY(-60px) scale(.6);animation:enter 3.6s ease-in-out forwards;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.12))}
+    .newborn.b1{left:18%;animation-delay:0.3s}
+    .newborn.b2{left:48%;animation-delay:0.9s}
+    .newborn.b3{left:78%;animation-delay:1.5s}
+
+    @keyframes enter{
+      0%{opacity:0;transform:translateY(-60px) scale(.6)}
+      40%{opacity:1;transform:translateY(0) scale(1)}
+      80%{transform:translateY(-8px) scale(1.02)}
+      100%{transform:translateY(0) scale(1)}
+    }
+
+    /* small responsive tweaks */
+    @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}.garland{display:none}}
+
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="invitation-card">
-      <div class="flower" style="font-size:36px;margin-bottom:6px">🌿🌼🌿</div>
-      <h1>Seemantham & Baby Shower</h1>
-      <div class="names">Divya & Sunil</div>
+  <!-- decorative marigold garlands (visual only) -->
+  <div class="garland left" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="garland right" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header id="hero">
+    <div class="invitation-card" role="main">
+      <!-- newborns: animated icons that float in to add playful vibe -->
+      <div class="newborns" aria-hidden="true">
+        <div class="newborn b1">👶</div>
+        <div class="newborn b2">🍼</div>
+        <div class="newborn b3">🧸</div>
+      </div>
+
+      <!-- floral top row (temple vibe) -->
+      <div class="flower" style="font-size:36px;margin-bottom:6px">🌼🌿🌼</div>
+
+      <h1>Seemantham</h1>
+      <div class="names">Divya &amp; Sunil</div>
 
       <div class="to-be-parents">
-        <div class="parents-badge"><span style="font-size:18px">🤰👨‍👩‍👧‍👦</span><strong style="color:#176b3a">Soon-to-be Parents</strong></div>
+        <div class="parents-badge"><span style="font-size:18px">🤰👪</span><strong style="color:#7b2e08">Soon-to-be Parents</strong></div>
         <div style="font-size:20px"> <span class="heart">❤️</span> <span class="baby">👶</span></div>
       </div>
 
-      <p class="subtitle">With the blessings of our families,<br>we joyfully invite you to celebrate this special Seemantham & baby shower.</p>
+      <p class="subtitle">With the blessings of our families,<br>we warmly invite you to the Seemantham ceremony of our baby.</p>
 
       <p style="margin:12px 0">📅 Sunday, 30 August 2026<br>🕚 11:00 AM<br>📍 Dortmund, Germany</p>
-      <p class="small-note">Join us for a day of blessings, laughter, and sweet moments as we shower love on the little one already in our hearts.</p>
+      <p class="small-note">Join us for traditions, blessings, and a day of family joy.</p>
 
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing" target="_blank">RSVP for Baby Shower</a>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing" target="_blank">RSVP</a>
     </div>
   </header>
 
@@ -155,15 +201,15 @@
         <button onclick="changeLanguage('german')">Deutsch</button>
       </div>
 
-      <p id="english" class="message active">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham and Baby Shower. Come celebrate with us — bring your blessings, your smiles, and your wishes for the little one on the way. There will be light rituals, laughter, tasty food, and lots of happy moments. We can't wait to share this beautiful day with you.</p>
+      <p id="english" class="message active">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and good wishes as we observe sacred traditions together.</p>
 
-      <p id="kannada" class="message">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಮತ್ತು ಬೇಬಿ ಶವರ್‌ಗೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಹಾರ್ದಿಕವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಬರಲಿ, ನಿಮ್ಮ ಏಕೈಕ ಆಶೀರ್ವಾದಗಳು, ನಗು ಮತ್ತು ಭವಿಷ್ಯದ ಮಗುವಿಗಾಗಿ ಶುಭಾಶಯಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. ಈ ಶುಭದಿನವನ್ನು ನಿಮ್ಮೊಡನೆ ಆಚರಿಸಲು ನಾವು ಎದುರುನೋಡುತ್ತಿದ್ದೇವೆ.</p>
+      <p id="kannada" class="message">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನಿಮ್ಮನ್ನು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಹೃತ್ಪೂರ್ವಕವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತಾರೆ. ಸಂಗಡ ಬಂದು ನಿಮ್ಮ ಆಶೀರ್ವಾದ ನೀಡಿ.</p>
 
-      <p id="telugu" class="message">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంతం మరియు బేబీ షవర్‌కు మిమ్మల్ని మరియు మీ కుటుంబాన్ని హృదయపూర్వకంగా ఆహ్వానిస్తారు. దయచేసి వచ్చి, మీ ఆశీర్వాదాలు, చిరునవ్వులు మరియు రాబోయే చిన్నారికి శుభాకాంక్షలు తెలియజేయండి. ఈ ప్రత్యేక రోజు మీతో పంచుకోవడానికి ఆత్రుతగా ఎదురుచూస్తున్నాము.</p>
+      <p id="telugu" class="message">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంతము వేడుకకు మీకు మరియు మీ కుటుంబానికి హృదయపూర్వక ఆహ్వానం. వచ్చి ఆశీస్సులు ఇవ్వండి.</p>
 
-      <p id="hindi" class="message">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमंत समारोह और बेबी शॉवर में सादर आमंत्रित करते हैं। कृपया आकर आशीर्वाद, मुस्कान और आने वाले नन्हे मेहमान के लिए शुभकामनाएँ दें। इस खुशीभरे दिन को आपके साथ साझा करने का इंतज़ार रहेगा।</p>
+      <p id="hindi" class="message">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमंत समारोह के लिए सादर आमंत्रित करते हैं। कृपया आकर अपना आशीर्वाद दें।</p>
 
-      <p id="german" class="message">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie und Ihre Familie herzlich zu ihrer Seemantham-Feier und Baby Shower ein. Kommen Sie vorbei, bringen Sie Ihre guten Wünsche und teilen Sie diesen besonderen Tag mit uns.</p>
+      <p id="german" class="message">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
     </div>
   </section>
 
@@ -174,7 +220,7 @@
       <br>
       <p>🪔 <strong>11:30 AM</strong><br>Seemantham Ceremony</p>
       <br>
-      <p>🎉 <strong>12:15 PM</strong><br>Baby Shower games & blessings</p>
+      <p>🎉 <strong>12:15 PM</strong><br>Family blessings & rituals</p>
       <br>
       <p>🍽️ <strong>1:00 PM</strong><br>Lunch & Family Gathering</p>
     </div>
@@ -193,11 +239,20 @@
 
   <footer>
     <h2>🌿 With love & blessings 🌿</h2>
-    <p>Divya & Sunil — Soon-to-be Parents</p>
+    <p>Divya &amp; Sunil — Soon-to-be Parents</p>
     <p>Venue address will be updated soon.</p>
   </footer>
 
   <script>
+    // If the hero photo isn't present (assets/photo.jpg), set a data attribute so CSS falls back to Unsplash
+    (function(){
+      const hero = document.getElementById('hero');
+      const img = new Image();
+      img.src = 'assets/photo.jpg';
+      img.onload = function(){ /* photo exists - keep default */ };
+      img.onerror = function(){ hero.setAttribute('data-fallback','true'); };
+    })();
+
     function changeLanguage(language){
       let messages=document.querySelectorAll('.message');
       messages.forEach(msg=>msg.classList.remove('active'));
