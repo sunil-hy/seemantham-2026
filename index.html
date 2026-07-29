@@ -1,7 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"><!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Seemantham Invitation | Divya & Sunil</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#fffdf5;color:#234}
+header{background:linear-gradient(135deg,#176b3a,#c89b3c);color:#fff;padding:60px 20px;text-align:center}
+section{max-width:900px;margin:auto;padding:40px 20px}
+.card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+.btn{display:inline-block;background:#176b3a;color:#fff;padding:14px 26px;border-radius:30px;text-decoration:none;margin:10px}
+.btn:hover{background:#c89b3c}
+#music{position:fixed;right:16px;bottom:16px}
+.fade{opacity:0;transform:translateY(20px);transition:1s}.fade.show{opacity:1;transform:none}
+</style></head>
+<body>
+<header>
+<h1>🌸 Seemantham Ceremony 🌸</h1>
+<h2>Divya & Sunil</h2>
+<p>Sunday, 30 August 2026 • 11:00 AM • Dortmund, Germany</p>
+<a class="btn" href="https://forms.gle/Sy3Z2dDKtJqVpE9m9" target="_blank">RSVP Now</a>
+<a class="btn" href="#">📅 Add to Calendar (Placeholder)</a>
+</header>
+
+<section class="fade"><div class="card">
+<h2>Venue</h2>
+<p><strong>Venue:</strong> <em>To be announced</em></p>
+<p><a class="btn" href="#">📍 Google Maps (Placeholder)</a></p>
+</div></section>
+
+<section class="fade"><div class="card">
+<h2>Invitation</h2>
+<p>With immense happiness, Divya and Sunil invite you and your family to join us for the Seemantham ceremony. Your presence and blessings will make this celebration truly special.</p>
+</div></section>
+
+<section class="fade"><div class="card">
+<h2>Schedule</h2>
+<ul><li>11:00 AM – Guests Arrive</li><li>11:30 AM – Ceremony</li><li>1:00 PM – Lunch & Family Gathering</li></ul>
+<a class="btn" href="https://forms.gle/Sy3Z2dDKtJqVpE9m9" target="_blank">Open RSVP Form</a>
+</div></section>
+
+<button id="music">🎵 Play Music</button>
+<audio id="audio" loop>
+<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio=document.getElementById('audio');
+document.getElementById('music').onclick=()=>{
+ if(audio.paused){audio.play();music.textContent='⏸ Pause Music';}
+ else{audio.pause();music.textContent='🎵 Play Music';}
+};
+const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');}));
+document.querySelectorAll('.fade').forEach(x=>obs.observe(x));
+</script>
+</body></html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Seemantham Invitation | Divya & Sunil</title>
