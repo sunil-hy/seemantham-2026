@@ -24,6 +24,11 @@
     .garland.left{left:6px}
     .garland.right{right:6px}
 
+    /* icons */
+    .icon{width:36px;height:36px;vertical-align:middle;display:inline-block}
+    .icon.small{width:24px;height:24px}
+    .icon.ghost{opacity:0.95}
+
     /* Header: use hero photo supplied by user (place at assets/photo.jpg) with overlay */
     header{
       min-height:100vh;
@@ -74,7 +79,7 @@
 
     .details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
     .detail-box{background:#fff3e0;padding:22px;border-radius:14px;text-align:center}
-    .detail-box span{font-size:30px;display:block;margin-bottom:10px}
+    .detail-box .icon{display:block;margin:0 auto 10px}
 
     .decor{text-align:center;font-size:35px;color:#b86b17}
     .countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
@@ -108,9 +113,9 @@
     /* small card decoration */
     .small-note{font-size:0.95rem;color:rgba(0,0,0,.67);margin-top:8px}
 
-    /* newborn entrance animations - multiple baby icons float in */
+    /* newborn entrance animations - multiple icons float in */
     .newborns{position:absolute;left:0;right:0;top:-10px;pointer-events:none;overflow:visible}
-    .newborn{position:absolute;font-size:34px;opacity:0;transform:translateY(-60px) scale(.6);animation:enter 3.6s ease-in-out forwards;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.12))}
+    .newborn{position:absolute;opacity:0;transform:translateY(-60px) scale(.6);animation:enter 3.6s ease-in-out forwards;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.12))}
     .newborn.b1{left:18%;animation-delay:0.3s}
     .newborn.b2{left:48%;animation-delay:0.9s}
     .newborn.b3{left:78%;animation-delay:1.5s}
@@ -137,32 +142,84 @@
     <span></span><span></span><span></span><span></span><span></span>
   </div>
 
+  <!-- Inline SVG symbol set (hidden) -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+    <symbol id="icon-flower" viewBox="0 0 24 24">
+      <path fill="#f6c860" d="M12 2c1.1 0 2 .9 2 2 0 .6-.3 1.2-.8 1.6.5.4.8 1 0 1.8-.6.6-1.2.4-1.2 0 0-.6-.6-1-1.4-1.6C9.3 7.3 8.8 6.8 8.8 6.2 8.8 4.9 9.7 4 10.8 4 11.2 4 11.6 4.1 12 4.3 12.4 4.1 12.7 4 13 4c1.1 0 2 .9 2 2 0 .5-.2.9-.6 1.2.4.2.8.6.8 1.1 0 .8-.6 1.3-1.3 1.9-.6.6-1.1 1.1-1.1 1.7 0 .9.9 1.6 1.9 1.6 1.1 0 2 .9 2 2 0 .3-.1.6-.2.9.7-.2 1.3-.6 1.8-1.2C19.9 18.6 20 18 20 17c0-1.1-.9-2-2-2-.7 0-1.3.3-1.7.8-.4-.4-.9-.9-1.6-1.4-.7-.5-1.2-.9-1.2-1.5 0-.8.8-1.5 1.7-1.7.3-.1.5-.2.7-.4-.4-.3-.9-.5-1.6-.5-1.1 0-2-.9-2-2 0-.3.1-.6.2-.9-.7.2-1.3.6-1.8 1.2C6.1 6.9 6 7.5 6 8.5 6 9.6 6.9 10.5 8 10.5c.7 0 1.3-.3 1.7-.8.4.4.9.9 1.6 1.4.7.5 1.2.9 1.2 1.5 0 .8-.8 1.5-1.7 1.7-.3.1-.5.2-.7.4.4.3.9.5 1.6.5 1.1 0 2 .9 2 2 0 .3-.1.6-.2.9 1-.3 2-1 2-2 0-1.1-.9-2-2-2-.7 0-1.3.3-1.7.8-.4-.4-.9-.9-1.6-1.4-.7-.5-1.2-.9-1.2-1.5 0-.8.8-1.5 1.7-1.7.3-.1.5-.2.7-.4C11.3 8.1 11 7.6 11 7c0-1.1.9-2 2-2z" />
+    </symbol>
+    <symbol id="icon-baby" viewBox="0 0 24 24">
+      <path fill="#ffd6a5" d="M12 2a3 3 0 00-3 3v1H8a2 2 0 00-2 2v3a6 6 0 006 6 6 6 0 006-6V8a2 2 0 00-2-2h-1V5a3 3 0 00-3-3zM9 9a1 1 0 110-2 1 1 0 010 2zm6 0a1 1 0 110-2 1 1 0 010 2z" />
+    </symbol>
+    <symbol id="icon-bottle" viewBox="0 0 24 24">
+      <path fill="#fff" d="M9 2h6v2H9z"/>
+      <path fill="#ffd6a5" d="M8 4h8v2H8z"/>
+      <path fill="#ffd24d" d="M7 6h10v12a3 3 0 01-3 3H10a3 3 0 01-3-3V6z"/>
+    </symbol>
+    <symbol id="icon-teddy" viewBox="0 0 24 24">
+      <circle fill="#f8c7c7" cx="7" cy="7" r="2"/>
+      <circle fill="#f8c7c7" cx="17" cy="7" r="2"/>
+      <path fill="#ffd6a5" d="M12 9c-3.3 0-6 2.7-6 6v2h12v-2c0-3.3-2.7-6-6-6z"/>
+    </symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24">
+      <path fill="#ff6b88" d="M12 21s-7-4.6-9-7.2C1.6 11.7 3 8 6 7c1.9-.7 3.8.2 4.7 1.4C11.2 7.2 13.1 6.4 15 7c3 1 4.4 4.7 3 6.8-2 2.6-9 7.2-9 7.2z"/>
+    </symbol>
+    <symbol id="icon-leaf" viewBox="0 0 24 24">
+      <path fill="#7bbf6a" d="M4 20s6-8 16-10c0 0-6 8-16 10z"/>
+    </symbol>
+    <symbol id="icon-lamp" viewBox="0 0 24 24">
+      <path fill="#f4d06f" d="M12 2l3 6H9l3-6z"/>
+      <path fill="#b86b17" d="M6 14h12v2H6z"/>
+    </symbol>
+    <symbol id="icon-party" viewBox="0 0 24 24">
+      <circle fill="#ffb84d" cx="6" cy="6" r="2"/>
+      <rect x="12" y="4" width="6" height="2" fill="#a22b1f" transform="rotate(20 15 5)"/>
+    </symbol>
+    <symbol id="icon-plate" viewBox="0 0 24 24">
+      <circle fill="#fff3e0" cx="12" cy="12" r="8"/>
+      <circle fill="#ffd24d" cx="12" cy="12" r="3"/>
+    </symbol>
+  </svg>
+
   <header id="hero">
     <div class="invitation-card" role="main">
-      <!-- newborns: animated icons that float in to add playful vibe -->
+      <!-- newborns: animated SVG icons that float in to add playful vibe -->
       <div class="newborns" aria-hidden="true">
-        <div class="newborn b1">👶</div>
-        <div class="newborn b2">🍼</div>
-        <div class="newborn b3">🧸</div>
+        <div class="newborn b1"><svg class="icon" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
+        <div class="newborn b2"><svg class="icon" aria-hidden="true"><use href="#icon-bottle"></use></svg></div>
+        <div class="newborn b3"><svg class="icon" aria-hidden="true"><use href="#icon-teddy"></use></svg></div>
       </div>
 
       <!-- floral top row (temple vibe) -->
-      <div class="flower" style="font-size:36px;margin-bottom:6px">🌼🌿🌼</div>
+      <div class="flower" style="font-size:36px;margin-bottom:6px" aria-hidden="true">
+        <svg class="icon ghost" aria-hidden="true"><use href="#icon-flower"></use></svg>
+        <svg class="icon ghost" aria-hidden="true" style="margin:0 6px"><use href="#icon-leaf"></use></svg>
+        <svg class="icon ghost" aria-hidden="true"><use href="#icon-flower"></use></svg>
+      </div>
 
       <h1>Seemantham</h1>
       <div class="names">Divya &amp; Sunil</div>
 
       <div class="to-be-parents">
-        <div class="parents-badge"><span style="font-size:18px">🤰👪</span><strong style="color:#7b2e08">Soon-to-be Parents</strong></div>
-        <div style="font-size:20px"> <span class="heart">❤️</span> <span class="baby">👶</span></div>
+        <div class="parents-badge" aria-hidden="true">
+          <svg class="icon small" aria-hidden="true"><use href="#icon-baby"></use></svg>
+          <strong style="color:#7b2e08">Soon-to-be Parents</strong>
+        </div>
+        <div style="font-size:20px"> <svg class="icon small heart" aria-hidden="true"><use href="#icon-heart"></use></svg> <svg class="icon small baby" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
       </div>
 
       <p class="subtitle">With the blessings of our families,<br>we warmly invite you to the Seemantham ceremony of our baby.</p>
 
-      <p style="margin:12px 0">📅 Sunday, 30 August 2026<br>🕚 11:00 AM<br>📍 Dortmund, Germany</p>
+      <p style="margin:12px 0">
+        <svg class="icon small" aria-hidden="true"><use href="#icon-flower"></use></svg>
+        Sunday, 30 August 2026<br>
+        <svg class="icon small" aria-hidden="true"><use href="#icon-lamp"></use></svg>
+        11:00 AM<br>
+        <svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg>
+        Dortmund, Germany
+      </p>
       <p class="small-note">Join us for traditions, blessings, and a day of family joy.</p>
 
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing" target="_blank">RSVP</a>
+      <a class="btn" href="https://forms.gle/cHQMCKnVozXXRbbA9" target="_blank">RSVP</a>
     </div>
   </header>
 
@@ -170,10 +227,10 @@
     <div class="card">
       <div class="title">Event Details</div>
       <div class="details">
-        <div class="detail-box"><span>📅</span><strong>Date</strong><br>30 August 2026</div>
-        <div class="detail-box"><span>🕚</span><strong>Time</strong><br>11:00 AM</div>
-        <div class="detail-box"><span>📍</span><strong>Location</strong><br>Dortmund, Germany<br><small>Venue details coming soon</small></div>
-        <div class="detail-box"><span>💌</span><strong>RSVP Deadline</strong><br>1 August 2026</div>
+        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-flower"></use></svg><strong>Date</strong><br>30 August 2026</div>
+        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-lamp"></use></svg><strong>Time</strong><br>11:00 AM</div>
+        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg><strong>Location</strong><br>Dortmund, Germany<br><small>Venue details coming soon</small></div>
+        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-plate"></use></svg><strong>RSVP Deadline</strong><br>1 August 2026</div>
       </div>
     </div>
   </section>
@@ -201,13 +258,13 @@
         <button onclick="changeLanguage('german')">Deutsch</button>
       </div>
 
-      <p id="english" class="message active">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and good wishes as we observe sacred traditions together.</p>
+      <p id="english" class="message active">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings[...]</p>
 
-      <p id="kannada" class="message">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನಿಮ್ಮನ್ನು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಹೃತ್ಪೂರ್ವಕವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತಾರೆ. ಸಂಗಡ ಬಂದು ನಿಮ್ಮ ಆಶೀರ್ವಾದ ನೀಡಿ.</p>
+      <p id="kannada" class="message">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ[...]</p>
 
-      <p id="telugu" class="message">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంతము వేడుకకు మీకు మరియు మీ కుటుంబానికి హృదయపూర్వక ఆహ్వానం. వచ్చి ఆశీస్సులు ఇవ్వండి.</p>
+      <p id="telugu" class="message">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంత[...]</p>
 
-      <p id="hindi" class="message">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमंत समारोह के लिए सादर आमंत्रित करते हैं। कृपया आकर अपना आशीर्वाद दें।</p>
+      <p id="hindi" class="message">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिव[...]</p>
 
       <p id="german" class="message">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
     </div>
@@ -216,13 +273,13 @@
   <section class="fade">
     <div class="card">
       <div class="title">Schedule</div>
-      <p>🌿 <strong>11:00 AM</strong><br>Guests arrive</p>
+      <p><svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg> <strong>11:00 AM</strong><br>Guests arrive</p>
       <br>
-      <p>🪔 <strong>11:30 AM</strong><br>Seemantham Ceremony</p>
+      <p><svg class="icon small" aria-hidden="true"><use href="#icon-lamp"></use></svg> <strong>11:30 AM</strong><br>Seemantham Ceremony</p>
       <br>
-      <p>🎉 <strong>12:15 PM</strong><br>Family blessings & rituals</p>
+      <p><svg class="icon small" aria-hidden="true"><use href="#icon-party"></use></svg> <strong>12:15 PM</strong><br>Family blessings & rituals</p>
       <br>
-      <p>🍽️ <strong>1:00 PM</strong><br>Lunch & Family Gathering</p>
+      <p><svg class="icon small" aria-hidden="true"><use href="#icon-plate"></use></svg> <strong>1:00 PM</strong><br>Lunch & Family Gathering</p>
     </div>
   </section>
 
@@ -233,12 +290,12 @@
       <br>
       <p><strong>Please confirm your attendance by 1 August 2026</strong></p>
       <br>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing" target="_blank">Open RSVP Form</a>
+      <a class="btn" href="https://forms.gle/cHQMCKnVozXXRbbA9" target="_blank">Open RSVP Form</a>
     </div>
   </section>
 
   <footer>
-    <h2>🌿 With love & blessings 🌿</h2>
+    <h2><svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg> With love & blessings <svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg></h2>
     <p>Divya &amp; Sunil — Soon-to-be Parents</p>
     <p>Venue address will be updated soon.</p>
   </footer>
@@ -256,7 +313,8 @@
     function changeLanguage(language){
       let messages=document.querySelectorAll('.message');
       messages.forEach(msg=>msg.classList.remove('active'));
-      document.getElementById(language).classList.add('active');
+      const el = document.getElementById(language);
+      if(el) el.classList.add('active');
     }
 
     // Countdown
