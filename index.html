@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seemantham Invitation | Divya & Sunil</title>
+  <title>Seemantham & Baby Shower Invitation | Divya & Sunil</title>
 
   <!-- Retained previous Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&family=Noto+Sans+Kannada&family=Noto+Sans+Telugu&display=swap" rel="stylesheet">
@@ -35,21 +35,23 @@
 
     .invitation-card{
       background:rgba(255,255,255,.92);
-      max-width:750px;
+      max-width:820px;
       padding:45px 30px;
       border-radius:25px;
       border:8px double #c89b3c;
       box-shadow:0 20px 50px rgba(0,0,0,.25);
       animation:fade 1.2s ease;
+      position:relative;
+      overflow:visible;
     }
 
     @keyframes fade{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-    h1{font-family:'Cinzel',serif;font-size:3rem;color:#176b3a}
-    .names{font-family:'Cinzel',serif;font-size:2.5rem;color:#b8860b;margin:20px}
-    .subtitle{font-size:1.1rem;margin:12px;color:rgba(0,0,0,.7)}
+    h1{font-family:'Cinzel',serif;font-size:2.6rem;color:#176b3a}
+    .names{font-family:'Cinzel',serif;font-size:2rem;color:#b8860b;margin:12px}
+    .subtitle{font-size:1.05rem;margin:10px;color:rgba(0,0,0,.7)}
 
-    .btn{display:inline-block;padding:14px 30px;margin:10px;background:#176b3a;color:white;border-radius:30px;text-decoration:none;font-weight:600;transition:.25s}
+    .btn{display:inline-block;padding:12px 28px;margin:10px;background:#176b3a;color:white;border-radius:30px;text-decoration:none;font-weight:600;transition:.25s}
     .btn:hover{background:#c89b3c;transform:scale(1.03)}
 
     section{padding:70px 20px;max-width:1100px;margin:40px auto}
@@ -71,7 +73,7 @@
     .languages button{border:none;padding:10px 15px;margin:5px;border-radius:20px;background:#eee;cursor:pointer}
     .languages button:hover{background:#176b3a;color:white}
 
-    .message{display:none;text-align:center;font-size:1.1rem}
+    .message{display:none;text-align:center;font-size:1.1rem;line-height:1.6}
     .message.active{display:block}
 
     /* simple fade-in for sections */
@@ -80,7 +82,20 @@
 
     footer{background:#176b3a;color:white;text-align:center;padding:40px}
 
-    @media (max-width:600px){h1{font-size:2rem}.invitation-card{padding:28px}}
+    /* Baby / parents animations */
+    .to-be-parents{display:flex;align-items:center;gap:18px;justify-content:center;margin-top:8px}
+    .parents-badge{background:linear-gradient(135deg,#fffaf0,#fff3e6);padding:8px 14px;border-radius:999px;border:2px solid #f1d7a3;display:flex;gap:10px;align-items:center}
+
+    .baby{font-size:48px;display:inline-block;transform-origin:center;animation:float 3s ease-in-out infinite}
+    .heart{color:#ff6b88;font-size:22px;display:inline-block;animation:pulse 1.6s infinite}
+
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.18)}100%{transform:scale(1)}}
+
+    /* small card decoration */
+    .small-note{font-size:0.95rem;color:rgba(0,0,0,.7);margin-top:8px}
+
+    @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}}
   </style>
 </head>
 
@@ -88,11 +103,20 @@
   <header>
     <div class="invitation-card">
       <div class="flower" style="font-size:36px;margin-bottom:6px">🌿🌼🌿</div>
-      <h1>Seemantham Ceremony</h1>
+      <h1>Seemantham & Baby Shower</h1>
       <div class="names">Divya & Sunil</div>
-      <p class="subtitle">With the blessings of our families,<br>we joyfully invite you to celebrate this special occasion.</p>
+
+      <div class="to-be-parents">
+        <div class="parents-badge"><span style="font-size:18px">🤰👨‍👩‍👧‍👦</span><strong style="color:#176b3a">Soon-to-be Parents</strong></div>
+        <div style="font-size:20px"> <span class="heart">❤️</span> <span class="baby">👶</span></div>
+      </div>
+
+      <p class="subtitle">With the blessings of our families,<br>we joyfully invite you to celebrate this special Seemantham & baby shower.</p>
+
       <p style="margin:12px 0">📅 Sunday, 30 August 2026<br>🕚 11:00 AM<br>📍 Dortmund, Germany</p>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing" target="_blank">RSVP</a>
+      <p class="small-note">Join us for a day of blessings, laughter, and sweet moments as we shower love on the little one already in our hearts.</p>
+
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf-ivBDExIcn8AZ_-j1_WA6aQQs6wPFdMIw3DQQHyUKJc9G9w/viewform?usp=sharing" target="_blank">RSVP for Baby Shower</a>
     </div>
   </header>
 
@@ -131,11 +155,15 @@
         <button onclick="changeLanguage('german')">Deutsch</button>
       </div>
 
-      <p id="english" class="message active">With immense happiness, Divya and Sunil invite you and your family to join us for the Seemantham ceremony. Your presence, blessings and good wishes will make this celebration truly special.</p>
-      <p id="kannada" class="message">ನಮ್ಮ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನಿಮ್ಮನ್ನು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ನಿಮ್ಮ ಉಪಸ್ಥಿತಿ ಮತ್ತು ಆಶೀರ್ವಾದಗಳು ನಮಗೆ ಅಮೂಲ್ಯ.</p>
-      <p id="telugu" class="message">మా సీమంత వేడుకకు మిమ్మల్ని మరియు మీ కుటుంబ సభ్యులను హృదయపూర్వకంగా ఆహ్వానిస్తున్నాము. మీ ఆశీస్సులు మాకు చాలా మాధుర్యం.</p>
-      <p id="hindi" class="message">हम आपको और आपके परिवार को हमारे सीमंत समारोह में सादर आमंत्रित करते हैं। आपकी उपस्थिति और आशीर्वाद हमारे लिए बहुत मायने रखते हैं।</p>
-      <p id="german" class="message">Wir laden Sie und Ihre Familie herzlich zu unserer Seemantha-Zeremonie ein. Ihre Anwesenheit und Segenswünsche bedeuten uns sehr viel.</p>
+      <p id="english" class="message active">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham and Baby Shower. Come celebrate with us — bring your blessings, your smiles, and your wishes for the little one on the way. There will be light rituals, laughter, tasty food, and lots of happy moments. We can't wait to share this beautiful day with you.</p>
+
+      <p id="kannada" class="message">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಮತ್ತು ಬೇಬಿ ಶವರ್‌ಗೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಹಾರ್ದಿಕವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಬರಲಿ, ನಿಮ್ಮ ಏಕೈಕ ಆಶೀರ್ವಾದಗಳು, ನಗು ಮತ್ತು ಭವಿಷ್ಯದ ಮಗುವಿಗಾಗಿ ಶುಭಾಶಯಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ. ಈ ಶುಭದಿನವನ್ನು ನಿಮ್ಮೊಡನೆ ಆಚರಿಸಲು ನಾವು ಎದುರುನೋಡುತ್ತಿದ್ದೇವೆ.</p>
+
+      <p id="telugu" class="message">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంతం మరియు బేబీ షవర్‌కు మిమ్మల్ని మరియు మీ కుటుంబాన్ని హృదయపూర్వకంగా ఆహ్వానిస్తారు. దయచేసి వచ్చి, మీ ఆశీర్వాదాలు, చిరునవ్వులు మరియు రాబోయే చిన్నారికి శుభాకాంక్షలు తెలియజేయండి. ఈ ప్రత్యేక రోజు మీతో పంచుకోవడానికి ఆత్రుతగా ఎదురుచూస్తున్నాము.</p>
+
+      <p id="hindi" class="message">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमंत समारोह और बेबी शॉवर में सादर आमंत्रित करते हैं। कृपया आकर आशीर्वाद, मुस्कान और आने वाले नन्हे मेहमान के लिए शुभकामनाएँ दें। इस खुशीभरे दिन को आपके साथ साझा करने का इंतज़ार रहेगा।</p>
+
+      <p id="german" class="message">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie und Ihre Familie herzlich zu ihrer Seemantham-Feier und Baby Shower ein. Kommen Sie vorbei, bringen Sie Ihre guten Wünsche und teilen Sie diesen besonderen Tag mit uns.</p>
     </div>
   </section>
 
@@ -145,6 +173,8 @@
       <p>🌿 <strong>11:00 AM</strong><br>Guests arrive</p>
       <br>
       <p>🪔 <strong>11:30 AM</strong><br>Seemantham Ceremony</p>
+      <br>
+      <p>🎉 <strong>12:15 PM</strong><br>Baby Shower games & blessings</p>
       <br>
       <p>🍽️ <strong>1:00 PM</strong><br>Lunch & Family Gathering</p>
     </div>
@@ -163,7 +193,7 @@
 
   <footer>
     <h2>🌿 With love & blessings 🌿</h2>
-    <p>Divya & Sunil</p>
+    <p>Divya & Sunil — Soon-to-be Parents</p>
     <p>Venue address will be updated soon.</p>
   </footer>
 
