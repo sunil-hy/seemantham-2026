@@ -4,9 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seemantham | Divya & Sunil</title>
+  <meta name="description" content="Divya & Sunil invite you to their Seemantham ceremony in Dortmund on 30 Aug 2026. RSVP by 1 Aug 2026.">
 
-  <!-- Google Fonts: keep Cinzel for headings and Poppins for body, Kannada/Telugu support -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&family=Noto+Sans+Kannada&family=Noto+Sans+Telugu&display=swap" rel="stylesheet">
+  <!-- Fonts: use display=swap to avoid FOIT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
     /* Reset & layout */
@@ -17,6 +20,10 @@
       color:#3b2a15;
       overflow-x:hidden;
     }
+
+    /* Skip link */
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{left:8px;top:8px;width:auto;height:auto;background:#fff;z-index:999;padding:8px 12px;border-radius:6px}
 
     /* Garland decorations (left & right) */
     .garland{position:fixed;top:0;bottom:0;width:72px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:28px;z-index:5}
@@ -130,10 +137,16 @@
     /* small responsive tweaks */
     @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}.garland{display:none}}
 
+    /* respect reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none!important;transition:none!important}
+    }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- decorative marigold garlands (visual only) -->
   <div class="garland left" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span>
@@ -143,12 +156,15 @@
   </div>
 
   <!-- Inline SVG symbol set (hidden) -->
-  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" focusable="false">
     <symbol id="icon-flower" viewBox="0 0 24 24">
-      <path fill="#f6c860" d="M12 2c1.1 0 2 .9 2 2 0 .6-.3 1.2-.8 1.6.5.4.8 1 0 1.8-.6.6-1.2.4-1.2 0 0-.6-.6-1-1.4-1.6C9.3 7.3 8.8 6.8 8.8 6.2 8.8 4.9 9.7 4 10.8 4 11.2 4 11.6 4.1 12 4.3 12.4 4.1 12.7 4 13 4c1.1 0 2 .9 2 2 0 .5-.2.9-.6 1.2.4.2.8.6.8 1.1 0 .8-.6 1.3-1.3 1.9-.6.6-1.1 1.1-1.1 1.7 0 .9.9 1.6 1.9 1.6 1.1 0 2 .9 2 2 0 .3-.1.6-.2.9.7-.2 1.3-.6 1.8-1.2C19.9 18.6 20 18 20 17c0-1.1-.9-2-2-2-.7 0-1.3.3-1.7.8-.4-.4-.9-.9-1.6-1.4-.7-.5-1.2-.9-1.2-1.5 0-.8.8-1.5 1.7-1.7.3-.1.5-.2.7-.4-.4-.3-.9-.5-1.6-.5-1.1 0-2-.9-2-2 0-.3.1-.6.2-.9-.7.2-1.3.6-1.8 1.2C6.1 6.9 6 7.5 6 8.5 6 9.6 6.9 10.5 8 10.5c.7 0 1.3-.3 1.7-.8.4.4.9.9 1.6 1.4.7.5 1.2.9 1.2 1.5 0 .8-.8 1.5-1.7 1.7-.3.1-.5.2-.7.4.4.3.9.5 1.6.5 1.1 0 2 .9 2 2 0 .3-.1.6-.2.9 1-.3 2-1 2-2 0-1.1-.9-2-2-2-.7 0-1.3.3-1.7.8-.4-.4-.9-.9-1.6-1.4-.7-.5-1.2-.9-1.2-1.5 0-.8.8-1.5 1.7-1.7.3-.1.5-.2.7-.4C11.3 8.1 11 7.6 11 7c0-1.1.9-2 2-2z" />
+      <circle cx="12" cy="12" r="2.6" fill="#ffd24d" />
+      <path d="M12 2c1.5 2.8 4.5 3 6 5-1.6 1.6-1.2 4.6-3.6 5.6-2.4-1-4.6.2-6.4-1.8C7 9 7.8 6 6 4.6 7.8 3 10.5 2 12 2z" fill="#f6c860"/>
     </symbol>
     <symbol id="icon-baby" viewBox="0 0 24 24">
-      <path fill="#ffd6a5" d="M12 2a3 3 0 00-3 3v1H8a2 2 0 00-2 2v3a6 6 0 006 6 6 6 0 006-6V8a2 2 0 00-2-2h-1V5a3 3 0 00-3-3zM9 9a1 1 0 110-2 1 1 0 010 2zm6 0a1 1 0 110-2 1 1 0 010 2z" />
+      <path fill="#ffd6a5" d="M12 2a3 3 0 00-3 3v1H8a2 2 0 00-2 2v3a6 6 0 006 6 6 6 0 006-6V8a2 2 0 00-2-2h-1V5a3 3 0 00-3-3z" />
+      <circle fill="#fff" cx="9" cy="8" r="1" />
+      <circle fill="#fff" cx="15" cy="8" r="1" />
     </symbol>
     <symbol id="icon-bottle" viewBox="0 0 24 24">
       <path fill="#fff" d="M9 2h6v2H9z"/>
@@ -181,7 +197,7 @@
   </svg>
 
   <header id="hero">
-    <div class="invitation-card" role="main">
+    <div class="invitation-card">
       <!-- newborns: animated SVG icons that float in to add playful vibe -->
       <div class="newborns" aria-hidden="true">
         <div class="newborn b1"><svg class="icon" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
@@ -204,7 +220,7 @@
           <svg class="icon small" aria-hidden="true"><use href="#icon-baby"></use></svg>
           <strong style="color:#7b2e08">Soon-to-be Parents</strong>
         </div>
-        <div style="font-size:20px"> <svg class="icon small heart" aria-hidden="true"><use href="#icon-heart"></use></svg> <svg class="icon small baby" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
+        <div style="font-size:20px" aria-hidden="true"> <svg class="icon small heart" aria-hidden="true"><use href="#icon-heart"></use></svg> <svg class="icon small baby" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
       </div>
 
       <p class="subtitle">With the blessings of our families,<br>we warmly invite you to the Seemantham ceremony of our baby.</p>
@@ -219,9 +235,11 @@
       </p>
       <p class="small-note">Join us for traditions, blessings, and a day of family joy.</p>
 
-      <a class="btn" href="https://forms.gle/cHQMCKnVozXXRbbA9" target="_blank">RSVP</a>
+      <a class="btn" href="https://forms.gle/cHQMCKnVozXXRbbA9" target="_blank" rel="noopener noreferrer">RSVP</a>
     </div>
   </header>
+
+  <main id="main">
 
   <section class="fade">
     <div class="card">
@@ -238,7 +256,7 @@
   <section class="fade">
     <div class="card">
       <div class="title">Countdown</div>
-      <div class="countdown">
+      <div class="countdown" aria-live="polite">
         <div class="time-box"><strong id="days">0</strong>Days</div>
         <div class="time-box"><strong id="hours">0</strong>Hours</div>
         <div class="time-box"><strong id="minutes">0</strong>Minutes</div>
@@ -251,22 +269,24 @@
     <div class="card">
       <div class="title">Invitation Message</div>
       <div class="languages">
-        <button onclick="changeLanguage('english')">English</button>
-        <button onclick="changeLanguage('kannada')">ಕನ್ನಡ</button>
-        <button onclick="changeLanguage('telugu')">తెలుగు</button>
-        <button onclick="changeLanguage('hindi')">हिन्दी</button>
-        <button onclick="changeLanguage('german')">Deutsch</button>
+        <button type="button" onclick="changeLanguage('english')">English</button>
+        <button type="button" onclick="changeLanguage('kannada')">ಕನ್ನಡ</button>
+        <button type="button" onclick="changeLanguage('telugu')">తెలుగు</button>
+        <button type="button" onclick="changeLanguage('hindi')">हिन्दी</button>
+        <button type="button" onclick="changeLanguage('german')">Deutsch</button>
       </div>
 
-      <p id="english" class="message active">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings[...]</p>
+      <div id="message-region" aria-live="polite" aria-atomic="true">
+        <p id="english" class="message active" lang="en" aria-hidden="false">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and best wishes as we mark this special day.</p>
 
-      <p id="kannada" class="message">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ[...]</p>
+        <p id="kannada" class="message" lang="kn" aria-hidden="true">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು coração ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತಾರೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
 
-      <p id="telugu" class="message">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంత[...]</p>
+        <p id="telugu" class="message" lang="te" aria-hidden="true">మన హృదయాలు ఆనందంతో నిండిపోయాయి! దివ్య మరియు సునీల్ వారి సీమంత వేడుకకు మీను మరియు మీ కుటుంబాన్ని ఆహ్వానిస్తున్నారు. ఈ విశేష రోజును మనం కలిసి జరుపుకుందాం.</p>
 
-      <p id="hindi" class="message">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिव[...]</p>
+        <p id="hindi" class="message" lang="hi" aria-hidden="true">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमनथम समारोह में आमंत्रित करते हैं। इस विशेष दिन को हमारे साथ मनाइए।</p>
 
-      <p id="german" class="message">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
+        <p id="german" class="message" lang="de" aria-hidden="true">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
+      </div>
     </div>
   </section>
 
@@ -290,9 +310,11 @@
       <br>
       <p><strong>Please confirm your attendance by 1 August 2026</strong></p>
       <br>
-      <a class="btn" href="https://forms.gle/cHQMCKnVozXXRbbA9" target="_blank">Open RSVP Form</a>
+      <a class="btn" href="https://forms.gle/cHQMCKnVozXXRbbA9" target="_blank" rel="noopener noreferrer">Open RSVP Form</a>
     </div>
   </section>
+
+  </main>
 
   <footer>
     <h2><svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg> With love & blessings <svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg></h2>
@@ -311,26 +333,39 @@
     })();
 
     function changeLanguage(language){
-      let messages=document.querySelectorAll('.message');
-      messages.forEach(msg=>msg.classList.remove('active'));
-      const el = document.getElementById(language);
-      if(el) el.classList.add('active');
+      const messages = document.querySelectorAll('.message');
+      messages.forEach(m=>{
+        const visible = m.id === language;
+        m.classList.toggle('active', visible);
+        m.setAttribute('aria-hidden', visible ? 'false' : 'true');
+      });
+      // move focus to the message region so screen readers announce the change reliably
+      const region = document.getElementById('message-region');
+      if(region){ region.focus({preventScroll:true}); }
     }
 
-    // Countdown
-    let eventDate = new Date('August 30, 2026 11:00:00').getTime();
-    setInterval(function(){
-      let now = new Date().getTime();
-      let distance = eventDate - now;
-      let days = Math.max(0, Math.floor(distance/(1000*60*60*24)));
-      let hours = Math.max(0, Math.floor((distance%(1000*60*60*24))/(1000*60*60)));
-      let minutes = Math.max(0, Math.floor((distance%(1000*60*60))/(1000*60)));
-      let seconds = Math.max(0, Math.floor((distance%(1000*60))/1000));
-      document.getElementById('days').innerHTML=days;
-      document.getElementById('hours').innerHTML=hours;
-      document.getElementById('minutes').innerHTML=minutes;
-      document.getElementById('seconds').innerHTML=seconds;
+    // Countdown (use ISO date with timezone offset if appropriate)
+    const eventDate = new Date('2026-08-30T11:00:00+02:00').getTime();
+    const timerId = setInterval(function(){
+      const now = Date.now();
+      const distance = eventDate - now;
+      if(distance <= 0){
+        clearInterval(timerId);
+        document.querySelector('.countdown').innerHTML = '<div class="time-box"><strong>0</strong>Days</div><div class="time-box"><strong>0</strong>Hours</div><div class="time-box"><strong>0</strong>Minutes</div><div class="time-box"><strong>0</strong>Seconds</div>';
+        return;
+      }
+      const days = Math.max(0, Math.floor(distance/(1000*60*60*24)));
+      const hours = Math.max(0, Math.floor((distance%(1000*60*60*24))/(1000*60*60)));
+      const minutes = Math.max(0, Math.floor((distance%(1000*60*60))/(1000*60)));
+      const seconds = Math.max(0, Math.floor((distance%(1000*60))/1000));
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
     },1000);
+
+    // make the message-region focusable for screen readers when language changes
+    document.getElementById('message-region').setAttribute('tabindex','-1');
 
     // fade-in observer
     const obs = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('show')}));
