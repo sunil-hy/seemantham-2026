@@ -19,6 +19,7 @@
       background:#fffaf0; /* warm cream */
       color:#3b2a15;
       overflow-x:hidden;
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
     }
 
     /* Skip link */
@@ -31,6 +32,10 @@
     .garland.left{left:6px}
     .garland.right{right:6px}
 
+    /* subtle patterned background to give temple cloth texture */
+    body::before{
+      content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);background-size:24px 24px;opacity:0.6;mix-blend-mode:overlay}
+
     /* icons */
     .icon{width:36px;height:36px;vertical-align:middle;display:inline-block}
     .icon.small{width:24px;height:24px}
@@ -40,7 +45,7 @@
     header{
       min-height:100vh;
       background:
-        linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
+        linear-gradient(rgba(60,30,0,0.6), rgba(60,30,0,0.6)),
         url('assets/photo.jpg') center/cover no-repeat;
       display:flex;
       align-items:center;
@@ -48,7 +53,12 @@
       text-align:center;
       padding:25px;
       position:relative;
+      overflow:hidden;
     }
+
+    /* temple gopuram silhouette for top edge */
+    .gopuram{position:absolute;left:0;right:0;top:0;height:140px;pointer-events:none;display:block}
+    .gopuram svg{width:100%;height:100%;opacity:0.12;filter:grayscale(0.2) saturate(0.6)}
 
     .invitation-card{
       background:linear-gradient(180deg,#fffdf8, #fff7ec);
@@ -63,11 +73,16 @@
       text-align:center;
     }
 
+    /* brass filigree corners */
+    .invitation-card:before,.invitation-card:after{content:"";position:absolute;width:64px;height:64px;background:linear-gradient(135deg,#f6d78a,#f0b84a);border-radius:14px;opacity:.95}
+    .invitation-card:before{left:-26px;top:-26px;transform:rotate(-18deg)}
+    .invitation-card:after{right:-26px;bottom:-26px;transform:rotate(18deg)}
+
     @keyframes fade{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
     h1{font-family:'Cinzel',serif;font-size:3rem;color:#7b2e08;letter-spacing:1px}
     .names{font-family:'Cinzel',serif;font-size:1.35rem;color:#a64b00;margin:8px}
-    .subtitle{font-size:1.02rem;margin:10px;color:rgba(0,0,0,.65)}
+    .subtitle{font-size:1.02rem;margin:10px;color:rgba(0,0,0,.75)}
 
     .btn{display:inline-block;padding:12px 28px;margin:10px;background:#a22b1f;color:white;border-radius:30px;text-decoration:none;font-weight:600;transition:.25s}
     .btn:hover{background:#ffb84d;transform:scale(1.03);color:#3b2a15}
@@ -78,7 +93,7 @@
     .card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.06);border-top:6px solid #a64b00}
 
     .details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-    .detail-box{background:#fff3e0;padding:22px;border-radius:14px;text-align:center}
+    .detail-box{background:#fff3e0;padding:22px;border-radius:14px;text-align:center;border:1px solid rgba(168,75,0,0.06)}
     .detail-box .icon{display:block;margin:0 auto 10px}
 
     .decor{text-align:center;font-size:35px;color:#b86b17}
@@ -88,7 +103,7 @@
     .time-box strong{font-size:26px;display:block}
 
     .languages{text-align:center;margin-bottom:30px}
-    .languages button{border:none;padding:10px 15px;margin:5px;border-radius:20px;background:#eee;cursor:pointer}
+    .languages button{border:none;padding:10px 15px;margin:5px;border-radius:20px;background:#f4e9db;cursor:pointer;font-weight:600}
     .languages button:hover{background:#7b2e08;color:white}
 
     .message{display:none;text-align:center;font-size:1.05rem;line-height:1.6}
@@ -110,8 +125,9 @@
     @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
     @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.12)}100%{transform:scale(1)}}
 
-    /* small card decoration */
-    .small-note{font-size:0.95rem;color:rgba(0,0,0,.67);margin-top:8px}
+    /* kolam at bottom of invitation */
+    .kolam{margin-top:18px;display:flex;justify-content:center}
+    .kolam svg{width:120px;height:120px;opacity:0.95;fill:none;stroke:#f6c860;stroke-width:2}
 
     /* newborn entrance animations - multiple icons float in */
     .newborns{position:absolute;left:0;right:0;top:-10px;pointer-events:none;overflow:visible}
@@ -127,13 +143,22 @@
       100%{transform:translateY(0) scale(1)}
     }
 
+    /* temple bell chain decoration */
+    .bells{position:absolute;top:68px;left:50%;transform:translateX(-50%);display:flex;gap:12px;pointer-events:none}
+    .bells .bell{width:10px;height:28px;background:linear-gradient(180deg,#f6d78a,#f0b84a);border-radius:4px;box-shadow:0 4px 6px rgba(0,0,0,0.08);transform-origin:top;animation:swing 3s ease-in-out infinite}
+    .bells .bell:nth-child(2){animation-delay:0.3s}
+    .bells .bell:nth-child(3){animation-delay:0.6s}
+    @keyframes swing{0%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}100%{transform:rotate(-4deg)}}
+
     /* small responsive tweaks */
-    @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}.garland{display:none}}
+    @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}.garland{display:none}.gopuram{height:96px}}
 
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- decorative marigold garlands (visual only) -->
   <div class="garland left" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span>
@@ -180,8 +205,20 @@
     </symbol>
   </svg>
 
-  <header id="hero">
-    <div class="invitation-card" role="main">
+  <!-- Gopuram silhouette (temple tower) -->
+  <div class="gopuram" aria-hidden="true">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0 120 L60 40 L120 80 L180 20 L240 70 L300 12 L360 60 L420 8 L480 80 L540 30 L600 90 L660 20 L720 70 L780 10 L840 60 L900 20 L960 70 L1020 18 L1080 68 L1140 12 L1200 72 L1260 22 L1320 68 L1380 28 L1440 120 Z" fill="#f7e6c9" />
+    </svg>
+  </div>
+
+  <!-- temple bells -->
+  <div class="bells" aria-hidden="true">
+    <div class="bell"></div><div class="bell"></div><div class="bell"></div>
+  </div>
+
+  <header id="hero" role="banner">
+    <div class="invitation-card" id="main" role="main">
       <!-- newborns: animated SVG icons that float in to add playful vibe -->
       <div class="newborns" aria-hidden="true">
         <div class="newborn b1"><svg class="icon" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
@@ -220,6 +257,15 @@
       <p class="small-note">Join us for traditions, blessings, and a day of family joy.</p>
 
       <a class="btn" href="https://forms.gle/cHQMCKnVozXXRbbA9" target="_blank" rel="noopener">RSVP</a>
+
+      <!-- kolam (simple decorative motif) -->
+      <div class="kolam" aria-hidden="true">
+        <svg viewBox="0 0 100 100" role="img" aria-label="Kolam decorative motif">
+          <circle cx="50" cy="50" r="26" stroke="#f6c860" stroke-width="2" fill="none"></circle>
+          <path d="M50 24 C60 34, 76 36, 76 50 C76 64, 60 66, 50 76 C40 66, 24 64, 24 50 C24 36, 40 34, 50 24 Z" stroke="#f6c860" stroke-width="1.6" fill="none"></path>
+        </svg>
+      </div>
+
     </div>
   </header>
 
@@ -238,7 +284,7 @@
   <section class="fade">
     <div class="card">
       <div class="title">Countdown</div>
-      <div class="countdown">
+      <div class="countdown" role="timer" aria-live="polite">
         <div class="time-box"><strong id="days">0</strong>Days</div>
         <div class="time-box"><strong id="hours">0</strong>Hours</div>
         <div class="time-box"><strong id="minutes">0</strong>Minutes</div>
@@ -250,23 +296,23 @@
   <section class="fade">
     <div class="card">
       <div class="title">Invitation Message</div>
-      <div class="languages">
-        <button onclick="changeLanguage('english')">English</button>
-        <button onclick="changeLanguage('kannada')">ಕನ್ನಡ</button>
-        <button onclick="changeLanguage('telugu')">తెలుగు</button>
-        <button onclick="changeLanguage('hindi')">हिन्दी</button>
-        <button onclick="changeLanguage('german')">Deutsch</button>
+      <div class="languages" role="tablist" aria-label="Select language">
+        <button onclick="changeLanguage('english')" role="tab">English</button>
+        <button onclick="changeLanguage('kannada')" role="tab">ಕನ್ನಡ</button>
+        <button onclick="changeLanguage('telugu')" role="tab">తెలుగు</button>
+        <button onclick="changeLanguage('hindi')" role="tab">हिन्दी</button>
+        <button onclick="changeLanguage('german')" role="tab">Deutsch</button>
       </div>
 
-      <p id="english" class="message active">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and good wishes as we welcome this new chapter.</p>
+      <p id="english" class="message active" lang="en">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and good wishes as we welcome this new chapter.</p>
 
-      <p id="kannada" class="message">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
+      <p id="kannada" class="message" lang="kn">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
 
-      <p id="telugu" class="message">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంత సమారంభానికి మీరు మరియు మీ కుటుంబాన్ని ఆత్మీయంగా ఆహ్వానిస్తున్నాము. ఈ ప్రత్యేక దినాన్ని మాతో కలిసి జరుప్కొందండి.</p>
+      <p id="telugu" class="message" lang="te">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంత సమారంభానికి మీరు మరియు మీ కుటుంబాన్ని ఆత్మీయంగా ఆహ్వానిస్తున్నాము. ఈ ప్రత్యేక దినాన్ని మాతో కలిసి జరుప్కొందండి.</p>
 
-      <p id="hindi" class="message">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनकी सिमंथम समारोह के लिए हार्दिक आमंत्रण देते हैं। इस खास दिन को हमारे साथ मनाइए।</p>
+      <p id="hindi" class="message" lang="hi">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनकी सिमंथम समारोह के लिए हार्दिक आमंत्रण देते हैं। इस खास दिन को हमारे साथ मनाइए।</p>
 
-      <p id="german" class="message">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
+      <p id="german" class="message" lang="de">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
     </div>
   </section>
 
