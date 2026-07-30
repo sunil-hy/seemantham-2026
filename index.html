@@ -36,12 +36,12 @@
     .icon.small{width:24px;height:24px}
     .icon.ghost{opacity:0.95}
 
-    /* Header: prefer local hero photo (assets/pregnant.jpg) with overlay; fallback to Unsplash */
+    /* Header: use provided Unsplash image as hero background (pregnant woman) with overlay */
     header{
       min-height:100vh;
       background:
         linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
-        url('assets/pregnant.jpg') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1538678867871-8a43e7487746?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -50,7 +50,7 @@
       position:relative;
     }
 
-    /* fallback background if local photo not present (pregnant woman image from Unsplash) */
+    /* fallback background if photo not present (backup Unsplash) */
     header[data-fallback] {
       background:
         linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
@@ -202,7 +202,7 @@
       <div class="newborns" aria-hidden="true">
         <div class="newborn b1"><svg class="icon" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
         <div class="newborn b2"><svg class="icon" aria-hidden="true"><use href="#icon-bottle"></use></svg></div>
-        <div class="newborn b3"><svg class="icon" aria-hidden="true"><use href="#icon-teddy"></use></svg></div>
+        <div class="newborn b3"><svg class="icon" aria-hidden="true"><use href="#icon-teddy'></use></svg></div>
       </div>
 
       <!-- floral top row (temple vibe) -->
@@ -279,11 +279,11 @@
       <div id="message-region" aria-live="polite" aria-atomic="true">
         <p id="english" class="message active" lang="en" aria-hidden="false">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and best wishes as we mark this special day.</p>
 
-        <p id="kannada" class="message" lang="kn" aria-hidden="true">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
+        <p id="kannada" class="message" lang="kn" aria-hidden="true">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ്യ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
 
-        <p id="telugu" class="message" lang="te" aria-hidden="true">మన హృదயాలు ఆనందంతో నిండిపోయాయి! దివ్య మరియు సునీల్ వారి సీమంత వేడుకకు మీను మరియు మీ కుటుంబాన్ని ఆహ్వానిస్తున్నారు. ఈ విశేష రోజును మనం కలిసి జరుపుకుందాం.</p>
+        <p id="telugu" class="message" lang="te" aria-hidden="true">మన హృదయాలు ఆనందంతో నిండిపోవు! దివ్య మరియు సునీల్ వారి సీమంత వేడుకకు మీను మరియు మీ కుటుంబాన్ని ఆహ్వానిస్తున్నారు. ఈ విశేష రోజును మనం కలిసి జరుపుకుందాం.</p>
 
-        <p id="hindi" class="message" lang="hi" aria-hidden="true">हमारे दिल खुशियों سے भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमनथम समारोह में आमंत्रित کرتے हैं। इस विशेष दिन को हमारे साथ मनाइए।</p>
+        <p id="hindi" class="message" lang="hi" aria-hidden="true">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमनथम समारोह में आमंत्रित करते हैं। इस विशेष दिन को हमारे साथ मनाइए।</p>
 
         <p id="german" class="message" lang="de" aria-hidden="true">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
       </div>
@@ -320,16 +320,16 @@
     <h2><svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg> With love & blessings <svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg></h2>
     <p>Divya &amp; Sunil — Soon-to-be Parents</p>
     <p>Venue address will be updated soon.</p>
-    <p class="small-note">Photo attribution: <a href="https://unsplash.com/de/fotos/eine-schwangere-frau-die-auf-einem-bett-liegt-und-ihren-bauch-beruhrt-E2sVEHpQD6o" target="_blank" rel="noopener noreferrer">Unsplash / Photographer</a></p>
+    <p class="small-note">Photo attribution: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
   </footer>
 
   <script>
-    // If the local hero photo isn't present, set a data attribute so CSS falls back to the backup image
+    // If the primary Unsplash hero photo fails to load, set a data attribute so CSS falls back to the backup image
     (function(){
       const hero = document.getElementById('hero');
       const img = new Image();
-      img.src = 'assets/pregnant.jpg';
-      img.onload = function(){ /* local photo exists - keep default */ };
+      img.src = 'https://images.unsplash.com/photo-1538678867871-8a43e7487746?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
+      img.onload = function(){ /* photo exists - keep default */ };
       img.onerror = function(){ hero.setAttribute('data-fallback','true'); };
     })();
 
