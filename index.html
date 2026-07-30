@@ -36,12 +36,12 @@
     .icon.small{width:24px;height:24px}
     .icon.ghost{opacity:0.95}
 
-    /* Header: use hero photo supplied by user (place at assets/photo.jpg) with overlay */
+    /* Header: use hero photo supplied by user (place at assets/pregnant.jpg) with overlay */
     header{
       min-height:100vh;
       background:
         linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
-        url('assets/photo.jpg') center/cover no-repeat;
+        url('assets/pregnant.jpg') center/cover no-repeat;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -50,11 +50,11 @@
       position:relative;
     }
 
-    /* fallback background if photo not present */
+    /* fallback background if photo not present (pregnant woman image from Unsplash) */
     header[data-fallback] {
       background:
         linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
-        url("https://images.unsplash.com/photo-1606800052052-a08af7148866") center/cover no-repeat;
+        url("https://images.unsplash.com/photo-1520975916300-3b0e9b66cfb7?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
     }
 
     .invitation-card{
@@ -279,7 +279,7 @@
       <div id="message-region" aria-live="polite" aria-atomic="true">
         <p id="english" class="message active" lang="en" aria-hidden="false">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and best wishes as we mark this special day.</p>
 
-        <p id="kannada" class="message" lang="kn" aria-hidden="true">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು coração ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತಾರೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
+        <p id="kannada" class="message" lang="kn" aria-hidden="true">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
 
         <p id="telugu" class="message" lang="te" aria-hidden="true">మన హృదయాలు ఆనందంతో నిండిపోయాయి! దివ్య మరియు సునీల్ వారి సీమంత వేడుకకు మీను మరియు మీ కుటుంబాన్ని ఆహ్వానిస్తున్నారు. ఈ విశేష రోజును మనం కలిసి జరుపుకుందాం.</p>
 
@@ -323,11 +323,11 @@
   </footer>
 
   <script>
-    // If the hero photo isn't present (assets/photo.jpg), set a data attribute so CSS falls back to Unsplash
+    // If the hero photo isn't present (assets/pregnant.jpg), set a data attribute so CSS falls back to Unsplash
     (function(){
       const hero = document.getElementById('hero');
       const img = new Image();
-      img.src = 'assets/photo.jpg';
+      img.src = 'assets/pregnant.jpg';
       img.onload = function(){ /* photo exists - keep default */ };
       img.onerror = function(){ hero.setAttribute('data-fallback','true'); };
     })();
