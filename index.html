@@ -36,12 +36,12 @@
     .icon.small{width:24px;height:24px}
     .icon.ghost{opacity:0.95}
 
-    /* Header: use provided Unsplash image as hero background (pregnant woman) with overlay */
+    /* Header: prefer local hero photo (assets/pregnant.jpg) with overlay; fallback to Unsplash */
     header{
       min-height:100vh;
       background:
         linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
-        url('https://images.unsplash.com/photo-1538678867871-8a43e7487746?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover no-repeat;
+        url('assets/pregnant.jpg') center/cover no-repeat;
       display:flex;
       align-items:center;
       justify-content:center;
@@ -50,17 +50,19 @@
       position:relative;
     }
 
-    /* fallback background if photo not present (backup Unsplash) */
+    /* fallback background if local photo not present (pregnant woman image from Unsplash) */
     header[data-fallback] {
       background:
         linear-gradient(rgba(60,30,0,0.55), rgba(60,30,0,0.55)),
         url("https://images.unsplash.com/photo-E2sVEHpQD6o?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
     }
 
+    /* Invitation card: center content and constrain widths so text blocks align */
     .invitation-card{
       background:linear-gradient(180deg,#fffdf8, #fff7ec);
-      max-width:880px;
-      padding:40px 34px;
+      width:100%;
+      max-width:760px;
+      padding:36px 28px;
       border-radius:26px;
       border:10px double #b86b17; /* brass-like border */
       box-shadow:0 25px 60px rgba(0,0,0,.26);
@@ -68,57 +70,64 @@
       position:relative;
       overflow:visible;
       text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
     }
+
+    /* keep content blocks readable and aligned */
+    .invitation-card > * { width:100%; max-width:640px; }
 
     @keyframes fade{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-    h1{font-family:'Cinzel',serif;font-size:3rem;color:#7b2e08;letter-spacing:1px}
-    .names{font-family:'Cinzel',serif;font-size:1.35rem;color:#a64b00;margin:8px}
-    .subtitle{font-size:1.02rem;margin:10px;color:rgba(0,0,0,.65)}
+    h1{font-family:'Cinzel',serif;font-size:3rem;color:#7b2e08;letter-spacing:1px;margin-bottom:6px}
+    .names{font-family:'Cinzel',serif;font-size:1.35rem;color:#a64b00;margin:4px 0}
+    .subtitle{font-size:1.02rem;margin:6px;color:rgba(0,0,0,.65)}
 
     .btn{display:inline-block;padding:12px 28px;margin:10px;background:#a22b1f;color:white;border-radius:30px;text-decoration:none;font-weight:600;transition:.25s}
     .btn:hover{background:#ffb84d;transform:scale(1.03);color:#3b2a15}
 
-    section{padding:70px 20px;max-width:1100px;margin:40px auto}
-    .title{text-align:center;font-family:'Cinzel',serif;font-size:2.2rem;color:#7b2e08;margin-bottom:25px}
+    section{padding:50px 20px;max-width:1100px;margin:28px auto}
+    .title{text-align:center;font-family:'Cinzel',serif;font-size:2.2rem;color:#7b2e08;margin-bottom:18px}
 
-    .card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.06);border-top:6px solid #a64b00}
+    .card{background:#fff;border-radius:18px;padding:24px;box-shadow:0 10px 30px rgba(0,0,0,.06);border-top:6px solid #a64b00}
 
-    .details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-    .detail-box{background:#fff3e0;padding:22px;border-radius:14px;text-align:center}
-    .detail-box .icon{display:block;margin:0 auto 10px}
+    .details{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;align-items:start}
+    .detail-box{background:#fff3e0;padding:18px;border-radius:14px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .detail-box .icon{display:block;margin:0 auto 8px}
 
     .decor{text-align:center;font-size:35px;color:#b86b17}
-    .countdown{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
+    .countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
 
-    .time-box{background:#7b2e08;color:white;padding:18px;border-radius:12px;min-width:90px;text-align:center}
-    .time-box strong{font-size:26px;display:block}
+    .time-box{background:#7b2e08;color:white;padding:14px;border-radius:12px;min-width:70px;text-align:center}
+    .time-box strong{font-size:22px;display:block}
 
-    .languages{text-align:center;margin-bottom:30px}
-    .languages button{border:none;padding:10px 15px;margin:5px;border-radius:20px;background:#eee;cursor:pointer}
+    .languages{text-align:center;margin-bottom:18px}
+    .languages button{border:none;padding:8px 12px;margin:6px;border-radius:20px;background:#eee;cursor:pointer}
     .languages button:hover{background:#7b2e08;color:white}
 
-    .message{display:none;text-align:center;font-size:1.05rem;line-height:1.6}
+    .message{display:none;text-align:center;font-size:1.02rem;line-height:1.6}
     .message.active{display:block}
 
     /* fade-in for sections */
     .fade{opacity:0;transform:translateY(20px);transition:1s}
     .fade.show{opacity:1;transform:none}
 
-    footer{background:#7b2e08;color:white;text-align:center;padding:40px}
+    footer{background:#7b2e08;color:white;text-align:center;padding:30px}
 
     /* Baby / parents animations */
-    .to-be-parents{display:flex;align-items:center;gap:18px;justify-content:center;margin-top:8px}
-    .parents-badge{background:linear-gradient(135deg,#fffaf0,#fff3e6);padding:8px 14px;border-radius:999px;border:2px solid #f1d7a3;display:flex;gap:10px;align-items:center}
+    .to-be-parents{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:6px}
+    .parents-badge{background:linear-gradient(135deg,#fffaf0,#fff3e6);padding:8px 12px;border-radius:999px;border:2px solid #f1d7a3;display:flex;gap:10px;align-items:center}
 
-    .baby{font-size:46px;display:inline-block;transform-origin:center;animation:float 3s ease-in-out infinite}
-    .heart{color:#ff6b88;font-size:20px;display:inline-block;animation:pulse 1.6s infinite}
+    .baby{font-size:42px;display:inline-block;transform-origin:center;animation:float 3s ease-in-out infinite}
+    .heart{color:#ff6b88;font-size:18px;display:inline-block;animation:pulse 1.6s infinite}
 
-    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
-    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.12)}100%{transform:scale(1)}}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+    @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
 
     /* small card decoration */
-    .small-note{font-size:0.95rem;color:rgba(0,0,0,.67);margin-top:8px}
+    .small-note{font-size:0.95rem;color:rgba(0,0,0,.67);margin-top:6px;text-align:center}
 
     /* newborn entrance animations - multiple icons float in */
     .newborns{position:absolute;left:0;right:0;top:-10px;pointer-events:none;overflow:visible}
@@ -135,7 +144,18 @@
     }
 
     /* small responsive tweaks */
-    @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}.garland{display:none}}
+    @media (max-width:900px){
+      .invitation-card{max-width:90%;padding:28px}
+      h1{font-size:2.1rem}
+      .baby{font-size:40px}
+    }
+    @media (max-width:600px){
+      h1{font-size:1.8rem}
+      .invitation-card{padding:18px}
+      .baby{font-size:36px}
+      .garland{display:none}
+      section{padding:30px 12px}
+    }
 
     /* respect reduced motion */
     @media (prefers-reduced-motion: reduce){
@@ -202,7 +222,7 @@
       <div class="newborns" aria-hidden="true">
         <div class="newborn b1"><svg class="icon" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
         <div class="newborn b2"><svg class="icon" aria-hidden="true"><use href="#icon-bottle"></use></svg></div>
-        <div class="newborn b3"><svg class="icon" aria-hidden="true"><use href="#icon-teddy'></use></svg></div>
+        <div class="newborn b3"><svg class="icon" aria-hidden="true"><use href="#icon-teddy"></use></svg></div>
       </div>
 
       <!-- floral top row (temple vibe) -->
@@ -279,97 +299,4 @@
       <div id="message-region" aria-live="polite" aria-atomic="true">
         <p id="english" class="message active" lang="en" aria-hidden="false">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and best wishes as we mark this special day.</p>
 
-        <p id="kannada" class="message" lang="kn" aria-hidden="true">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ്യ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
-
-        <p id="telugu" class="message" lang="te" aria-hidden="true">మన హృదయాలు ఆనందంతో నిండిపోవు! దివ్య మరియు సునీల్ వారి సీమంత వేడుకకు మీను మరియు మీ కుటుంబాన్ని ఆహ్వానిస్తున్నారు. ఈ విశేష రోజును మనం కలిసి జరుపుకుందాం.</p>
-
-        <p id="hindi" class="message" lang="hi" aria-hidden="true">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमनथम समारोह में आमंत्रित करते हैं। इस विशेष दिन को हमारे साथ मनाइए।</p>
-
-        <p id="german" class="message" lang="de" aria-hidden="true">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="fade">
-    <div class="card">
-      <div class="title">Schedule</div>
-      <p><svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg> <strong>11:00 AM</strong><br>Guests arrive</p>
-      <br>
-      <p><svg class="icon small" aria-hidden="true"><use href="#icon-lamp"></use></svg> <strong>11:30 AM</strong><br>Seemantham Ceremony</p>
-      <br>
-      <p><svg class="icon small" aria-hidden="true"><use href="#icon-party"></use></svg> <strong>12:15 PM</strong><br>Family blessings & rituals</p>
-      <br>
-      <p><svg class="icon small" aria-hidden="true"><use href="#icon-plate"></use></svg> <strong>1:00 PM</strong><br>Lunch & Family Gathering</p>
-    </div>
-  </section>
-
-  <section class="fade">
-    <div class="card" style="text-align:center">
-      <div class="title">RSVP</div>
-      <p>We would be honoured to celebrate this beautiful occasion with you.</p>
-      <br>
-      <p><strong>Please confirm your attendance by 1 August 2026</strong></p>
-      <br>
-      <a class="btn" href="https://forms.gle/cHQMCKnVozXXRbbA9" target="_blank" rel="noopener noreferrer">Open RSVP Form</a>
-    </div>
-  </section>
-
-  </main>
-
-  <footer>
-    <h2><svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg> With love & blessings <svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg></h2>
-    <p>Divya &amp; Sunil — Soon-to-be Parents</p>
-    <p>Venue address will be updated soon.</p>
-    <p class="small-note">Photo attribution: <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a></p>
-  </footer>
-
-  <script>
-    // If the primary Unsplash hero photo fails to load, set a data attribute so CSS falls back to the backup image
-    (function(){
-      const hero = document.getElementById('hero');
-      const img = new Image();
-      img.src = 'https://images.unsplash.com/photo-1538678867871-8a43e7487746?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
-      img.onload = function(){ /* photo exists - keep default */ };
-      img.onerror = function(){ hero.setAttribute('data-fallback','true'); };
-    })();
-
-    function changeLanguage(language){
-      const messages = document.querySelectorAll('.message');
-      messages.forEach(m=>{
-        const visible = m.id === language;
-        m.classList.toggle('active', visible);
-        m.setAttribute('aria-hidden', visible ? 'false' : 'true');
-      });
-      const region = document.getElementById('message-region');
-      if(region){ region.focus({preventScroll:true}); }
-    }
-
-    // Countdown (use ISO date with timezone offset if appropriate)
-    const eventDate = new Date('2026-08-30T11:00:00+02:00').getTime();
-    const timerId = setInterval(function(){
-      const now = Date.now();
-      const distance = eventDate - now;
-      if(distance <= 0){
-        clearInterval(timerId);
-        document.querySelector('.countdown').innerHTML = '<div class="time-box"><strong>0</strong>Days</div><div class="time-box"><strong>0</strong>Hours</div><div class="time-box"><strong>0</strong>Minutes</div><div class="time-box"><strong>0</strong>Seconds</div>';
-        return;
-      }
-      const days = Math.max(0, Math.floor(distance/(1000*60*60*24)));
-      const hours = Math.max(0, Math.floor((distance%(1000*60*60*24))/(1000*60*60)));
-      const minutes = Math.max(0, Math.floor((distance%(1000*60*60))/(1000*60)));
-      const seconds = Math.max(0, Math.floor((distance%(1000*60))/1000));
-      document.getElementById('days').textContent = days;
-      document.getElementById('hours').textContent = hours;
-      document.getElementById('minutes').textContent = minutes;
-      document.getElementById('seconds').textContent = seconds;
-    },1000);
-
-    // make the message-region focusable for screen readers when language changes
-    document.getElementById('message-region').setAttribute('tabindex','-1');
-
-    // fade-in observer
-    const obs = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('show')}));
-    document.querySelectorAll('.fade').forEach(x=>obs.observe(x));
-  </script>
-</body>
-</html>
+        <p id="kannada" class="message" lang="kn" aria-hidden="true">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್...
