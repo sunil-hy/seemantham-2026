@@ -93,6 +93,15 @@
     /* small responsive tweaks */
     @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}.garland{display:none}.time-box{min-width:70px}}
 
+    /* wide-screen: left-align only the location detail box, keep others centered */
+    @media (min-width:900px){
+      .detail-box.location{ text-align:left }
+      .detail-box.location .map-actions{ justify-content:flex-start }
+    }
+
+    /* embedded map style */
+    .map-embed{width:100%;height:240px;border:0;border-radius:12px}
+
   </style>
 </head>
 
@@ -186,11 +195,12 @@
       <div class="details">
         <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-flower"></use></svg><strong>Date</strong><br>30 August 2026</div>
         <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-lamp"></use></svg><strong>Time</strong><br>11:00 AM</div>
-        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg><strong>Location</strong><br>Dortmund, Germany<br><small>Kleingärtnerverein Am Schloßweg e.V., Schloß-Westhusener-Straße 2, 44357 Mengede</small>
+        <div class="detail-box location"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg><strong>Location</strong><br>Dortmund, Germany<br><small>Kleingärtnerverein Am Schloßweg e.V., Schloß-Westhusener-Straße 2, 44357 Mengede</small>
           <div class="map-actions">
+            <iframe class="map-embed" src="https://www.google.com/maps?q=Kleing%C3%A4rtnerverein+Am+Schlo%C3%9Fweg+e.V.,+Schlo%C3%9F-Westhusener-Stra%C3%9Fe+2,+44357+Mengede&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Embedded map of venue"></iframe>
             <a class="btn" id="map-link" href="#" target="_blank" rel="noopener">Open in Google Maps</a>
           </div>
-          <small>Click the map button to open directions</small>
+          <small>Use the embedded map to preview the location or open in Google Maps for directions</small>
         </div>
         <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-plate"></use></svg><strong>RSVP Deadline</strong><br>1 August 2026</div>
       </div>
@@ -228,7 +238,7 @@
 
       <p id="hindi" class="message" lang="hi">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनके सीमंथम् समारोह के लिए हार्दिक आमंत्रण देते हैं। कृपया पधारें, आशीर्वाद साझा करें और पारंपरिक अनुष्ठानों में भाग लें।</p>
 
-      <p id="german" class="message" lang="de">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie und Ihre Familie herzlich zu ihrer Seemantham-Zeremonie (traditionelle Babyr Zeremonie) ein. Kommen Sie vorbei, teilen Sie Ihren guten Wunsch und nehmen Sie an den traditionellen Ritualen teil.</p>
+      <p id="german" class="message" lang="de">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie und Ihre Familie herzlich zu ihrer Seemantham‑Zeremonie (traditionelle Segenszeremonie) ein. Kommen Sie vorbei, teilen Sie Ihren guten Wunsch und nehmen Sie an den traditionellen Ritualen teil.</p>
     </div>
   </section>
 
