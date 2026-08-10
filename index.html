@@ -145,13 +145,18 @@
 
     /* temple bell chain decoration */
     .bells{position:absolute;top:68px;left:50%;transform:translateX(-50%);display:flex;gap:12px;pointer-events:none}
-    .bells .bell{width:10px;height:28px;background:linear-gradient(180deg,#f6d78a,#f0b84a);border-radius:4px;box-shadow:0 4px 6px rgba(0,0,0,0.08);transform-origin:top;animation:swing 3s ease-in-out infinite}
+    .bells .bell{width:10px;height:28px;background:linear-gradient(180deg,#f6d78a,#f0b84a);border-radius:4px;box-shadow:0 4px 6px rgba(0,0,0,0.08);transform-origin:top;animation:swing 3s ease-in-out}
     .bells .bell:nth-child(2){animation-delay:0.3s}
     .bells .bell:nth-child(3){animation-delay:0.6s}
     @keyframes swing{0%{transform:rotate(-4deg)}50%{transform:rotate(4deg)}100%{transform:rotate(-4deg)}}
 
     /* small responsive tweaks */
     @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}.garland{display:none}.gopuram{height:96px}}
+
+    /* venue / qr tweaks */
+    .venue-block{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:10px}
+    .venue-qr{width:120px;height:120px;border-radius:12px;border:4px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+    .venue-address{max-width:260px;text-align:left}
 
   </style>
 </head>
@@ -170,7 +175,7 @@
   <!-- Inline SVG symbol set (hidden) -->
   <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden">
     <symbol id="icon-flower" viewBox="0 0 24 24">
-      <path fill="#f6c860" d="M12 2c1.1 0 2 .9 2 2 0 .6-.3 1.2-.8 1.6.5.4.8 1 0 1.8-.6.6-1.2.4-1.2 0 0-.6-.6-1-1.4-1.6C9.3 7.3 8.8 6.8 8.8 6.2 8.8 4.9 9.7 4 10.8 4 11.2 4 11.6 4.1 12 4.3 12.4 4.1 12.7 4.1 13 4.2" />
+      <path fill="#f6c860" d="M12 2c1.1 0 2 .9 2 2 0 .6-.3 1.2-.8 1.6.5.4.8 1 0 1.8-.6.6-1.2.4-1.2 0 0-.6-.6-1-1.4-1.6C9.3 7.3 8.8 6.8 8.8 6.2 8.8 4.9 9.7 4 10.8 4 11.2 4 11.6 4.1 12 4.3 12.4 4.1[...]"/>
     </symbol>
     <symbol id="icon-baby" viewBox="0 0 24 24">
       <path fill="#ffd6a5" d="M12 2a3 3 0 00-3 3v1H8a2 2 0 00-2 2v3a6 6 0 006 6 6 6 0 006-6V8a2 2 0 00-2-2h-1V5a3 3 0 00-3-3zM9 9a1 1 0 110-2 1 1 0 010 2zm6 0a1 1 0 110-2 1 1 0 010 2z" />
@@ -208,7 +213,7 @@
   <!-- Gopuram silhouette (temple tower) -->
   <div class="gopuram" aria-hidden="true">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-      <path d="M0 120 L60 40 L120 80 L180 20 L240 70 L300 12 L360 60 L420 8 L480 80 L540 30 L600 90 L660 20 L720 70 L780 10 L840 60 L900 20 L960 70 L1020 18 L1080 68 L1140 12 L1200 72 L1260 22 L1320 68 L1380 28 L1440 120 Z" fill="#f7e6c9" />
+      <path d="M0 120 L60 40 L120 80 L180 20 L240 70 L300 12 L360 60 L420 8 L480 80 L540 30 L600 90 L660 20 L720 70 L780 10 L840 60 L900 20 L960 70 L1020 18 L1080 68 L1140 12 L1200 72 L1260 22 L1[...]"/>
     </svg>
   </div>
 
@@ -241,8 +246,7 @@
           <svg class="icon small" aria-hidden="true"><use href="#icon-baby"></use></svg>
           <strong style="color:#7b2e08">Soon-to-be Parents</strong>
         </div>
-        <div style="font-size:20px"> <svg class="icon small heart" aria-hidden="true"><use href="#icon-heart"></use></svg> <svg class="icon small baby" aria-hidden="true"><use href="#icon-baby"></use></svg></div>
-      </div>
+        <div style="font-size:20px"> <svg class="icon small heart" aria-hidden="true"><use href="#icon-heart"></use></svg> <svg class="icon small baby" aria-hidden="true"><use href="#icon-baby"></use>[...]</div>
 
       <p class="subtitle">With the blessings of our families,<br>we warmly invite you to the Seemantham ceremony of our baby.</p>
 
@@ -275,7 +279,19 @@
       <div class="details">
         <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-flower"></use></svg><strong>Date</strong><br>30 August 2026</div>
         <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-lamp"></use></svg><strong>Time</strong><br>11:00 AM</div>
-        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg><strong>Location</strong><br>Dortmund, Germany<br><small>Venue details coming soon</small></div>
+        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg><strong>Location</strong><br>
+          <div class="venue-address">
+            Kleingärtnerverein Am Schloßweg e.V.<br>
+            Schloß-Westhusener-Straße 2<br>
+            44357 Mengede
+          </div>
+
+          <div class="venue-block" aria-hidden="false">
+            <a class="btn" id="map-link" href="#" target="_blank" rel="noopener">Open in Google Maps</a>
+            <img id="map-qr" class="venue-qr" src="" alt="QR code to open venue in Google Maps" />
+          </div>
+          <small>Click map or scan QR to open directions</small>
+        </div>
         <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-plate"></use></svg><strong>RSVP Deadline</strong><br>1 August 2026</div>
       </div>
     </div>
@@ -304,15 +320,15 @@
         <button onclick="changeLanguage('german')" role="tab">Deutsch</button>
       </div>
 
-      <p id="english" class="message active" lang="en">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring your blessings and good wishes as we welcome this new chapter.</p>
+      <p id="english" class="message active" lang="en">Our hearts are full of joy! Divya and Sunil warmly invite you and your family to their Seemantham ceremony. Come celebrate with us — bring[...]
 
-      <p id="kannada" class="message" lang="kn">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ ಸೀಮಂತ ಸಮಾರಂಭಕ್ಕೆ ನೀವು ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವನ್ನು ಆತ್ಮೀಯವಾಗಿ ಆಹ್ವಾನಿಸುತ್ತೇವೆ. ಈ ವಿಶೇಷ ದಿನವನ್ನು ನಮ್ಮೊಂದಿಗೆ ಹಬ್ಬಿಸೋಣ.</p>
+      <p id="kannada" class="message" lang="kn">ನಮ್ಮ ಹೃದಯಗಳು ಸಂತೋಷದಿಂದ ತುಂಬಿವೆ! ದಿವ್ಯ ಮತ್ತು ಸುನಿಲ್ ಅವರ [...]
 
-      <p id="telugu" class="message" lang="te">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వారి సీమంత సమారంభానికి మీరు మరియు మీ కుటుంబాన్ని ఆత్మీయంగా ఆహ్వానిస్తున్నాము. ఈ ప్రత్యేక దినాన్ని మాతో కలిసి జరుప్కొందండి.</p>
+      <p id="telugu" class="message" lang="te">మన హృదయాలు ఆనందంతో నిండుకున్నాయి! దివ్య మరియు సునీల్ వ��[...]
 
-      <p id="hindi" class="message" lang="hi">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपके परिवार को उनकी सिमंथम समारोह के लिए हार्दिक आमंत्रण देते हैं। इस खास दिन को हमारे साथ मनाइए।</p>
+      <p id="hindi" class="message" lang="hi">हमारे दिल खुशियों से भरे हैं! दिव्या और सुनील आपको और आपक��[...]
 
-      <p id="german" class="message" lang="de">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wünsche mit uns.</p>
+      <p id="german" class="message" lang="de">Unsere Herzen sind voller Freude! Divya und Sunil laden Sie herzlich zur Seemantham-Zeremonie ein. Kommen Sie vorbei und teilen Sie Ihre guten Wüns[...]
     </div>
   </section>
 
@@ -343,7 +359,7 @@
   <footer>
     <h2><svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg> With love & blessings <svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg></h2>
     <p>Divya &amp; Sunil — Soon-to-be Parents</p>
-    <p>Venue address will be updated soon.</p>
+    <p>Kleingärtnerverein Am Schloßweg e.V., Schloß-Westhusener-Straße 2, 44357 Mengede</p>
   </footer>
 
   <script>
@@ -381,6 +397,20 @@
     // fade-in observer
     const obs = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('show')}));
     document.querySelectorAll('.fade').forEach(x=>obs.observe(x));
+
+    // Map link + QR
+    (function(){
+      // Google Maps search URL for the venue (escaped where necessary)
+      const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Kleing%C3%A4rtnerverein+Am+Schlo%C3%9Fweg+e.V.%2C+Schlo%C3%9F-Westhusener-Stra%C3%9Fe+2%2C+44357+Mengede';
+      const mapLink = document.getElementById('map-link');
+      const qrImg = document.getElementById('map-qr');
+      if(mapLink) mapLink.href = mapUrl;
+      if(qrImg){
+        // Use Google Chart API to generate a QR code image that encodes the Maps URL
+        qrImg.src = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=' + encodeURIComponent(mapUrl) + '&chld=L|2';
+      }
+    })();
+
   </script>
 </body>
 </html>
