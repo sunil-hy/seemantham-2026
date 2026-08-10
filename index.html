@@ -153,11 +153,6 @@
     /* small responsive tweaks */
     @media (max-width:600px){h1{font-size:1.8rem}.invitation-card{padding:22px}.baby{font-size:40px}.garland{display:none}.gopuram{height:96px}}
 
-    /* venue / qr tweaks */
-    .venue-block{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:10px}
-    .venue-qr{width:120px;height:120px;border-radius:12px;border:4px solid #fff;box-shadow:0 8px 20px rgba(0,0,0,0.12)}
-    .venue-address{max-width:260px;text-align:left}
-
   </style>
 </head>
 
@@ -279,16 +274,10 @@
       <div class="details">
         <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-flower"></use></svg><strong>Date</strong><br>30 August 2026</div>
         <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-lamp"></use></svg><strong>Time</strong><br>11:00 AM</div>
-        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg><strong>Location</strong><br>
-          <div class="venue-address">
-            Kleingärtnerverein Am Schloßweg e.V.<br>
-            Schloß-Westhusener-Straße 2<br>
-            44357 Mengede
-          </div>
-
-          <div class="venue-block" aria-hidden="false">
+        <div class="detail-box"><svg class="icon" aria-hidden="true"><use href="#icon-leaf"></use></svg><strong>Location</strong><br>Dortmund, Germany<br><small>Kleingärtnerverein Am Schloßweg e.V., Schloß-Westhusener-Straße 2, 44357 Mengede</small>
+          <div style="margin-top:10px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap">
             <a class="btn" id="map-link" href="#" target="_blank" rel="noopener">Open in Google Maps</a>
-            <img id="map-qr" class="venue-qr" src="" alt="QR code to open venue in Google Maps" />
+            <img id="map-qr" class="venue-qr" src="" alt="QR code to open venue in Google Maps" style="width:84px;height:84px;border-radius:8px;border:3px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,0.12)"/>
           </div>
           <small>Click map or scan QR to open directions</small>
         </div>
@@ -359,7 +348,7 @@
   <footer>
     <h2><svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg> With love & blessings <svg class="icon small" aria-hidden="true"><use href="#icon-leaf"></use></svg></h2>
     <p>Divya &amp; Sunil — Soon-to-be Parents</p>
-    <p>Kleingärtnerverein Am Schloßweg e.V., Schloß-Westhusener-Straße 2, 44357 Mengede</p>
+    <p>Venue address will be updated soon.</p>
   </footer>
 
   <script>
